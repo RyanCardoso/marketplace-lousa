@@ -1,6 +1,17 @@
 // Libs
 import React from "react";
 
+// Organisms
+import { Banner } from "@/components/organisms";
+
+// Templates
+import { ScreenHome } from "@/components/templates";
+
 export default function Home() {
-  return <h1>Hellow</h1>;
+  return (
+    <>
+      <ScreenHome />
+      <Banner />
+    </>
+  );
 }
