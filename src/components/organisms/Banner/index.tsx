@@ -9,12 +9,12 @@ import { BoxSlider } from "@/components/organisms/Slider";
 import * as S from "./styles";
 
 // Data
-import { data } from "./data";
+import { bannerData } from "@/Mock/bannerData";
 
 export const Banner = () => {
   return (
     <BoxSlider>
-      {data.map((item) => (
+      {bannerData.map((item) => (
         <S.Slides key={item.id}>
           <div>
             <p>New Arrivals</p>
