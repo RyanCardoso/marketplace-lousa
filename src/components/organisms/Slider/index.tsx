@@ -10,29 +10,51 @@ import { formatNumberTwoLength } from "@/utils/consts";
 
 // Styles
 import * as S from "./styles";
+import { bannerData } from "@/Mock/bannerData";
 
 interface BoxSliderProps {
   children: ReactNode;
+  type?: "primary" | "secondary";
 }
 
-export const BoxSlider = ({ children }: BoxSliderProps) => {
+export const BoxSlider = ({ children, type = "primary" }: BoxSliderProps) => {
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    appendDots: (dots: ReactNode) => (
-      <S.Dots>
-        <ul>{dots}</ul>
-      </S.Dots>
-    ),
-    customPaging: (i: number) => <div>{formatNumberTwoLength(i + 1)}</div>,
+    primary: {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      appendDots: (dots: ReactNode) => (
+        <S.Dots>
+          <ul>{dots}</ul>
+        </S.Dots>
+      ),
+      customPaging: (i: number) => <div>{formatNumberTwoLength(i + 1)}</div>,
+    },
+    secondary: {
+      appendDots: (dots: ReactNode) => (
+        <S.AppendDots>
+          <ul>{dots}</ul>
+        </S.AppendDots>
+      ),
+      customPaging: (i: any) => (
+        <S.DotsImg>
+          <img src={bannerData[i]?.img} />
+        </S.DotsImg>
+      ),
+      dots: true,
+      dotsClass: "slick-dots slick-thumb",
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    },
   };
 
   return (
     <S.Container>
-      <Slider {...settings}>{children}</Slider>
+      <Slider {...settings[type]}>{children}</Slider>
     </S.Container>
   );
 };

@@ -14,4 +14,5 @@ export const bannerData = [
     name: "Terceiro",
     img: "https://segurosinteligentes.com.br/portalrh/wp-content/uploads/saude-da-mulher-itsseg4.png",
   },
+  
 ];
