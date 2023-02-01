@@ -17,7 +17,13 @@ export const Header = () => {
   return (
     <S.Container isFixed={sticky}>
       <S.Wrapper>
-        <Link href="/">Company Board</Link>
+        <S.Menu>
+          <Link href="/">Home</Link>
+
+          <Link href="/serviços-de-reforma">Serviços de reforma</Link>
+
+          <Link href="#quem-somos">Quem somos</Link>
+        </S.Menu>
         <Logo />
         <Button label="Solicitar orçamento" isIcon disabled />
       </S.Wrapper>
