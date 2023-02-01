@@ -22,12 +22,15 @@ const handleIsLink = (op: OptionDTO) => {
 export const Breadcrumb = ({ options }: BreadcrumbProps) => {
   return (
     <S.Container>
-      <S.Item>
-        <Link href="/">Home</Link>
-      </S.Item>
-      {options.map((i) => (
-        <S.Item key={i.path + i.label}>/ {handleIsLink(i)}</S.Item>
-      ))}
+      <S.Title>{options[options.length - 1].label}</S.Title>
+      <S.BoxItems>
+        <S.Item>
+          <Link href="/">Home</Link>
+        </S.Item>
+        {options.map((i) => (
+          <S.Item key={i.path + i.label}>/ {handleIsLink(i)}</S.Item>
+        ))}
+      </S.BoxItems>
     </S.Container>
   );
 };

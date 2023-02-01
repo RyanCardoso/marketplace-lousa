@@ -22,6 +22,8 @@ export const AboutProduct = styled.div`
 `;
 
 export const Price = styled.h3`
+  font-size: 36px;
+
   span {
     text-decoration: line-through 1.5px;
     margin-right: 10px;

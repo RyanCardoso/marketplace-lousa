@@ -26,8 +26,6 @@ export const ScreenProduct = () => {
 
   return (
     <>
-      <h1>{product?.name}</h1>
-
       <Breadcrumb
         options={[
           { label: "Produtos", path: "/produtos" },

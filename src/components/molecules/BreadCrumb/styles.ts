@@ -1,7 +1,18 @@
 // Libs
 import styled from "styled-components";
 
-export const Container = styled.ul`
+export const Container = styled.div`
+  margin: 6px 0 50px;
+`;
+
+export const Title = styled.div`
+  font-size: 63px;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+`;
+
+export const BoxItems = styled.ul`
   display: flex;
   column-gap: 10px;
 `;
