@@ -2,7 +2,7 @@
 import React, { ReactNode } from "react";
 
 // Organims
-import { Header } from "@/components/organisms";
+import { Footer, Header } from "@/components/organisms";
 
 // Styles
 import * as S from "./styles";
@@ -16,6 +16,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <S.Container>
       <Header />
       <S.Content>{children}</S.Content>
+      <Footer />
     </S.Container>
   );
 };

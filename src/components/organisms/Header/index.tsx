@@ -14,7 +14,7 @@ export const Header = () => {
   return (
     <S.Container isFixed={sticky}>
       <S.Wrapper>
-        <Link href="/">Lousa</Link>
+        <Link href="/">Company Board</Link>
       </S.Wrapper>
     </S.Container>
   );

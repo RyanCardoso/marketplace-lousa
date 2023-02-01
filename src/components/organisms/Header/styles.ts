@@ -11,7 +11,8 @@ const headerFixed = css`
 
   background-color: #054a85;
   box-shadow: 0 2px 12px -3px rgb(0, 0, 0);
-
+  transition: 0.5s;
+  
   a {
     color: #fff !important;
   }

@@ -15,7 +15,7 @@ import { productData } from "@/Mock/producData";
 import * as S from "./styles";
 
 interface BoxSliderProps {
-  product_id: string;
+  product_id?: string;
   children: ReactNode;
   type?: "primary" | "secondary";
 }
@@ -55,7 +55,7 @@ export const BoxSlider = ({
         </S.AppendDots>
       ),
       customPaging: (i: any) => (
-        <S.DotsImg>{handleSrc(product_id, i)}</S.DotsImg>
+        <S.DotsImg>{product_id && handleSrc(product_id, i)}</S.DotsImg>
       ),
       dots: true,
       dotsClass: "slick-dots slick-thumb",
