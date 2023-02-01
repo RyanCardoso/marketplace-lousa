@@ -8,16 +8,32 @@ import "slick-carousel/slick/slick-theme.css";
 // Utils
 import { formatNumberTwoLength } from "@/utils/consts";
 
+// Mock
+import { productData } from "@/Mock/producData";
+
 // Styles
 import * as S from "./styles";
-import { bannerData } from "@/Mock/bannerData";
 
 interface BoxSliderProps {
+  product_id: string;
   children: ReactNode;
   type?: "primary" | "secondary";
 }
 
-export const BoxSlider = ({ children, type = "primary" }: BoxSliderProps) => {
+const handleSrc = (product_id: string, index: number) => {
+  const find = productData.find((p) => p.id === product_id);
+
+  const imgObj = find?.photoswipe[index];
+  const validateSrc = imgObj?.type === "img" ? imgObj?.src : imgObj?.thumbnail;
+
+  return <img src={validateSrc} alt={find?.photoswipe[index].alt} />;
+};
+
+export const BoxSlider = ({
+  children,
+  type = "primary",
+  product_id,
+}: BoxSliderProps) => {
   const settings = {
     primary: {
       dots: true,
@@ -39,9 +55,7 @@ export const BoxSlider = ({ children, type = "primary" }: BoxSliderProps) => {
         </S.AppendDots>
       ),
       customPaging: (i: any) => (
-        <S.DotsImg>
-          <img src={bannerData[i]?.img} />
-        </S.DotsImg>
+        <S.DotsImg>{handleSrc(product_id, i)}</S.DotsImg>
       ),
       dots: true,
       dotsClass: "slick-dots slick-thumb",

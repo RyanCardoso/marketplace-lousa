@@ -7,9 +7,6 @@ import { Photoswipe } from "@/components/molecules/Photoswipe";
 // Utils
 import { formatMoney } from "@/utils/consts";
 
-// Mock
-import { bannerData } from "@/Mock/bannerData";
-
 // Styles
 import * as S from "./styles";
 
@@ -31,7 +28,7 @@ export const DetailsProduct = ({ data }: any) => {
   return (
     <S.Container>
       <S.Gallery>
-        <Photoswipe imagens={bannerData} />
+        <Photoswipe imagens={data.photoswipe} product_id={data.id} />
       </S.Gallery>
 
       <S.AboutProduct>

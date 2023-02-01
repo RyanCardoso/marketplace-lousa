@@ -6,9 +6,9 @@ export const Card = styled.div`
   height: 555px;
   background-color: #ddd;
 
-  img {
-    width: 100%;
-    height: 100%;
+  img, video {
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover;
   }
 `;
