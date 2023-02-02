@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 // Hooks
-import { useValidateScroll } from "@/hooks/useValidateScroll";
+/* import { useValidateScroll } from "@/hooks/useValidateScroll"; */
 
 // Atoms
 import { Burger, Button, Logo } from "@/components/atoms";
@@ -28,7 +28,7 @@ const Menu = () => (
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const sticky = useValidateScroll();
+  /* const sticky = useValidateScroll(); */
 
   return (
     <S.Container isFixed={false}>

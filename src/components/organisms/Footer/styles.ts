@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   width: 100%;
-  background-color: #000;
 `;
 
 export const Wrapper = styled.ul`
@@ -15,14 +14,11 @@ export const Wrapper = styled.ul`
 
   gap: 30px;
   margin: 0 auto;
-  padding: 75px 0;
+  padding: 24px 0;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 70px;
+    gap: 32px;
   }
 `;
 
@@ -31,29 +27,37 @@ export const Card = styled.li`
   flex-direction: column;
 
   gap: 6px;
-  color: #fff;
   list-style: none;
-`;
 
-export const Logo = styled.h2`
-  font-size: 36px;
+  > a {
+    img {
+      width: 105.64px;
+    }
+  }
 `;
 
 export const Title = styled.h4`
+  color: #004178;
   font-size: 19px;
   margin-bottom: 16px;
 `;
 
 export const Paragraph = styled.p`
+  color: #404040;
   font-size: 15px;
 `;
 
 export const Link = styled.a`
   text-decoration: none;
-  color: #fff;
+  color: #404040;
 
   span {
     display: block;
     margin-top: 6px;
   }
+`;
+
+export const Figure = styled.figure`
+  display: flex;
+  gap: 16px;
 `;

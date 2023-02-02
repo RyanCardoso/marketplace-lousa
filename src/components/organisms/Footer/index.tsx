@@ -1,6 +1,9 @@
 // Libs
 import React from "react";
 
+// Atoms
+import { Logo } from "@/components/atoms";
+
 // Styles
 import * as S from "./styles";
 
@@ -9,27 +12,35 @@ export const Footer = () => {
     <S.Container>
       <S.Wrapper>
         <S.Card>
-          <S.Logo>Company Board</S.Logo>
+          <Logo />
         </S.Card>
 
         <S.Card>
-          <S.Title>Fale conosco</S.Title>
-          <S.Link href="tel:+551128836628">+55 11 2883-6628</S.Link>
+          <S.Title>Contato</S.Title>
+          <S.Link href="tel:+551128836628">(11) 2883-6628</S.Link>
           <S.Link href="mailto:comercial@companyboard.com.br">
             comercial@companyboard.com.br
           </S.Link>
         </S.Card>
 
         <S.Card>
-          <S.Title>Localização</S.Title>
+          <S.Title>Endereço</S.Title>
           <S.Link href="https://goo.gl/maps/GSpgAvpzCKGyW23W7">
-            R. São Demétrio, 65 - Vila Marieta
-            <span>São Paulo - SP, 03618-010</span>
+            Rua São Demétrio, 65, Vila Marieta
+            <span>Penha, São Paulo, SP - 03618-010</span>
           </S.Link>
         </S.Card>
 
         <S.Card>
-          <S.Title>Follow Us</S.Title>
+          <S.Title>Siga a gente!</S.Title>
+          <S.Figure>
+            <S.Link href="#">
+              <img src="./images/instagram.svg" alt="icon instagram" />
+            </S.Link>
+            <S.Link href="#">
+              <img src="./images/facebook.svg" alt="icon facebook" />
+            </S.Link>
+          </S.Figure>
         </S.Card>
       </S.Wrapper>
     </S.Container>
