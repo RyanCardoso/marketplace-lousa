@@ -31,11 +31,12 @@ export const AppendDots = styled.div`
     li {
       width: 155px;
       height: 155px;
-      
+
       margin: 0;
-      
+
       opacity: 0.5;
-      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12),
+        0px 2px 2px rgba(0, 0, 0, 0.24);
     }
   }
 `;
@@ -49,5 +50,35 @@ export const DotsImg = styled.figure`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+`;
+
+// Terciary
+export const SampleNextArrow = styled.div`
+  width: 48px;
+  height: 48px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  right: -24px;
+
+  background-color: #033573;
+
+  z-index: 99;
+
+  &:hover {
+    background-color: #033573;
+  }
+
+  &::before {
+    content: "";
+  }
+`;
+
+export const SamplePrevArrow = styled(SampleNextArrow)`
+  left: -24px;
+
+  img {
+    transform: scale(-1);
   }
 `;

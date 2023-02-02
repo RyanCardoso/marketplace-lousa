@@ -17,7 +17,7 @@ import * as S from "./styles";
 interface BoxSliderProps {
   product_id?: string;
   children: ReactNode;
-  type?: "primary" | "secondary";
+  type?: "primary" | "secondary" | "tertiary";
 }
 
 const handleSrc = (product_id: string, index: number) => {
@@ -63,6 +63,24 @@ export const BoxSlider = ({
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+    },
+    tertiary: {
+      dots: false,
+      infinite: true,
+      centerMode: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      variableWidth: true,
+      nextArrow: (
+        <S.SampleNextArrow>
+          <img src="/images/arrow.svg" alt="icon_arrow" />
+        </S.SampleNextArrow>
+      ),
+      prevArrow: (
+        <S.SamplePrevArrow>
+          <img src="/images/arrow.svg" alt="icon_arrow" />
+        </S.SamplePrevArrow>
+      ),
     },
   };
 

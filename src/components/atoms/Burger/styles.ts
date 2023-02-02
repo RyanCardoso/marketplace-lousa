@@ -42,9 +42,9 @@ export const Container = styled.a<BurgerStylesType>`
     user-select: none;
 
     ${({ isOpen }) => isOpen && handleAnimation}
+  }
 
-    @media (min-width: 769px) {
-      display: none;
-    }
+  @media (min-width: 769px) {
+    display: none;
   }
 `;
