@@ -18,11 +18,13 @@ export const Figure = styled.figure`
 
   button {
     position: absolute;
+    width: 224px;
+    height: 52px;
     left: 50%;
     bottom: 10px;
-    transform: translateX(-50%);
 
     opacity: 0;
+    transform: translateX(-50%);
     transition: bottom cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s,
       opacity cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s;
   }

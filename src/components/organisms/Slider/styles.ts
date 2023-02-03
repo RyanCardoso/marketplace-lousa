@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  /* overflow: hidden; */
 `;
 
 // Primary
@@ -73,6 +72,17 @@ export const SampleNextArrow = styled.div`
   &::before {
     content: "";
   }
+
+  @media (max-width: 785px) {
+    width: 32px;
+    height: 32px;
+    top: calc(100% - 16px);
+    right: calc(50% - 45px);
+
+    img {
+      width: 18.62px;
+    }
+  }
 `;
 
 export const SamplePrevArrow = styled(SampleNextArrow)`
@@ -80,5 +90,9 @@ export const SamplePrevArrow = styled(SampleNextArrow)`
 
   img {
     transform: scale(-1);
+  }
+
+  @media (max-width: 785px) {
+    left: calc(50% - 45px);
   }
 `;
