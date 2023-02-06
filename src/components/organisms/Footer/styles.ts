@@ -17,6 +17,7 @@ export const Wrapper = styled.ul`
   padding: 24px 0;
 
   @media (max-width: 768px) {
+    width: 85%;
     flex-direction: column;
     gap: 32px;
   }

@@ -21,6 +21,10 @@ export const Wrapper = styled.div`
   margin: 0 auto;
 
   @media (max-width: 1045px) {
-      justify-content: space-evenly;
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: 786px) {
+    width: 85%;
   }
 `;

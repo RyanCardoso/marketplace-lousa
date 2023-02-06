@@ -17,7 +17,11 @@ export const Slides = styled.div`
     max-width: 1440px;
   }
 
-  @media (max-width: 230px) {
+  @media (max-width: 768px) {
     height: 230px;
+
+    > div {
+      width: 85%;
+    }
   }
 `;

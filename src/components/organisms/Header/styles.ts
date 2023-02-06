@@ -39,6 +39,8 @@ export const Wrapper = styled.div`
   background-color: #fff;
 
   @media (max-width: 768px) {
+    width: 85%;
+
     > ul,
     button {
       display: none;
@@ -71,7 +73,7 @@ export const Dropdown = styled.div<HeaderStylesProps>`
 export const Content = styled.nav`
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 85%;
 
   padding: 30px 0;
   margin: 0 auto;

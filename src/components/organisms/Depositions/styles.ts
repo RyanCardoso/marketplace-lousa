@@ -33,13 +33,19 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 768px) {
+    width: 100%;
+
     h2 {
-      width: 90%;
-      min-width: 292px;
       font-size: 20px;
+      
+      width: 85%;
+      min-width: 292px;
+      margin: 0 auto;
     }
 
     > div {
+      width: 100%;
+
       .slick-slider {
         height: 444px;
 
