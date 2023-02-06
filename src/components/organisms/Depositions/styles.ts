@@ -7,6 +7,7 @@ export const Container = styled.section`
 
   @media (max-width: 768px) {
     padding: 24px 0;
+    overflow: hidden;
   }
 `;
 
