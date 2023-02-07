@@ -5,11 +5,13 @@ export const Container = styled.div`
   margin: 6px 0 50px;
 `;
 
-export const Title = styled.div`
-  font-size: 63px;
-  font-weight: 600;
+export const Title = styled.h1`
+  color: #0a3264;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
 
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 `;
 
 export const BoxItems = styled.ul`
@@ -24,8 +26,8 @@ export const Item = styled.li`
   p {
     display: inline;
 
-    font-style: italic;
-    color: #000;
+    color: #0a3264;
+    font-size: 14px;
   }
 
   a {

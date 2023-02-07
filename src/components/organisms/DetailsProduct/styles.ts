@@ -24,7 +24,8 @@ export const AboutProduct = styled.div`
 `;
 
 export const Price = styled.h3`
-  font-size: 36px;
+  color: #404040;
+  font-size: 28px;
 
   span {
     text-decoration: line-through 1.5px;
@@ -32,4 +33,7 @@ export const Price = styled.h3`
   }
 `;
 
-export const Descriptions = styled.p``;
+export const Descriptions = styled.p`
+  color: #404040 red;
+  line-height: 24px;
+`;

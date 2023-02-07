@@ -9,6 +9,7 @@ import { formatMoney } from "@/utils/consts";
 
 // Styles
 import * as S from "./styles";
+import { Button } from "@/components/atoms";
 
 const handlePrice = (data: any) => {
   const formatPrice = formatMoney(data.price);
@@ -34,6 +35,12 @@ export const DetailsProduct = ({ data }: any) => {
       <S.AboutProduct>
         <S.Price>{handlePrice(data)}</S.Price>
         <S.Descriptions>{data.description}</S.Descriptions>
+        <Button
+          label="Solicitar orçamento pelo Whatsapp"
+          width="284px"
+          height="52px"
+          backgroundColor="#25D366"
+        />
       </S.AboutProduct>
     </S.Container>
   );
