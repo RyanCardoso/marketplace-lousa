@@ -5,3 +5,4 @@ export { Footer } from "./Footer";
 export { DetailsProduct } from "./DetailsProduct";
 export { Header } from "./Header";
 export { ListProducts } from "./ListProducts";
+export { RelatedProducts } from "./RelatedProducts";

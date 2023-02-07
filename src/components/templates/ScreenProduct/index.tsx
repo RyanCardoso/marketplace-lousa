@@ -9,7 +9,7 @@ import { Line } from "@/components/atoms";
 import { Breadcrumb } from "@/components/molecules";
 
 // Organisms
-import { DetailsProduct } from "@/components/organisms";
+import { DetailsProduct, RelatedProducts } from "@/components/organisms";
 
 // Mock
 import { productData } from "@/Mock/producData";
@@ -38,10 +38,9 @@ export const ScreenProduct = () => {
           { label: product.name, path: "" },
         ]}
       />
-
       <DetailsProduct data={product} />
-
       <Line />
+      <RelatedProducts />
     </S.Container>
   );
 };
