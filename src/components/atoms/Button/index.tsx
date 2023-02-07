@@ -29,7 +29,7 @@ export const Button = ({
       {...props}
     >
       {label}
-      {isIcon && <img src="./images/whatsapp.svg" alt="icon-whatsapp" />}
+      {isIcon && <img src="/images/whatsapp.svg" alt="icon-whatsapp" />}
     </S.Container>
   );
 };

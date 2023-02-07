@@ -35,10 +35,10 @@ export const Footer = () => {
           <S.Title>Siga a gente!</S.Title>
           <S.Figure>
             <S.Link href="#">
-              <img src="./images/instagram.svg" alt="icon instagram" />
+              <img src="/images/instagram.svg" alt="icon instagram" />
             </S.Link>
             <S.Link href="#">
-              <img src="./images/facebook.svg" alt="icon facebook" />
+              <img src="/images/facebook.svg" alt="icon facebook" />
             </S.Link>
           </S.Figure>
         </S.Card>
