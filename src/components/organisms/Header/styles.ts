@@ -16,12 +16,16 @@ const headerFixed = css`
 
 export const Container = styled.div<HeaderStylesProps>`
   ${({ isFixed }) => css`
-    position: relative;
+    position: sticky;
     width: 100%;
+    top: 0;
+    left: 0;
+
     padding: 9.16px 0;
 
     z-index: 999;
     background-color: #fff;
+    border-bottom: 1px solid #f2f1f1;
 
     ${isFixed && headerFixed}
   `}

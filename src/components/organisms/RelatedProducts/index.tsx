@@ -1,5 +1,5 @@
 // Libs
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -13,16 +13,19 @@ import * as S from "./styles";
 import { CardProduct } from "@/components/molecules";
 
 export const RelatedProducts = () => {
-  const randomProducts = productData
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 4);
+  const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const random = productData.sort(() => 0.5 - Math.random()).slice(0, 4);
+    setProducts(random);
+  }, []);
 
   return (
     <S.Container>
       <S.Title>Produtos relacionados</S.Title>
       <S.BoxProducts>
-        {randomProducts.map((item, index) => (
-          <CardProduct key={index} img="" title={item.name} />
+        {products?.map((item, index) => (
+          <CardProduct key={index} img="" title={item?.name} />
         ))}
       </S.BoxProducts>
     </S.Container>

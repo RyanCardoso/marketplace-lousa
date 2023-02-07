@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   width: 100%;
+  border-top: 1px solid #f2f1f1;
 `;
 
 export const Wrapper = styled.ul`
