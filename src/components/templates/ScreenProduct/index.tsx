@@ -11,6 +11,9 @@ import { DetailsProduct } from "@/components/organisms";
 // Mock
 import { productData } from "@/Mock/producData";
 
+// Styles
+import * as S from "./styles";
+
 export const ScreenProduct = () => {
   const router = useRouter();
   const { uuid } = router.query;
@@ -25,7 +28,7 @@ export const ScreenProduct = () => {
   }, [uuid]);
 
   return (
-    <>
+    <S.Container>
       <Breadcrumb
         options={[
           { label: "Produtos", path: "/produtos" },
@@ -34,6 +37,6 @@ export const ScreenProduct = () => {
       />
 
       <DetailsProduct data={product} />
-    </>
+    </S.Container>
   );
 };

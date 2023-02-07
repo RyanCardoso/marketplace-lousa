@@ -2,21 +2,23 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  width: 100%;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 
-  gap: 70px;
+  gap: 27px;
+  margin: 0 auto;
 `;
 
 export const Gallery = styled.div`
   width: 50%;
+  max-width: 600px;
 `;
 
 export const AboutProduct = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  flex: 1;
 
   gap: 20px;
 `;

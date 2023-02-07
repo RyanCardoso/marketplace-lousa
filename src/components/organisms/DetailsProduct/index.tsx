@@ -2,7 +2,7 @@
 import React from "react";
 
 // Molecules
-import { Photoswipe } from "@/components/molecules/Photoswipe";
+import { Showcase } from "@/components/molecules";
 
 // Utils
 import { formatMoney } from "@/utils/consts";
@@ -28,7 +28,7 @@ export const DetailsProduct = ({ data }: any) => {
   return (
     <S.Container>
       <S.Gallery>
-        <Photoswipe imagens={data.photoswipe} product_id={data.id} />
+        <Showcase imagens={data.photoswipe} /* product_id={data.id} */ />
       </S.Gallery>
 
       <S.AboutProduct>
