@@ -2,6 +2,9 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
+// Atoms
+import { Line } from "@/components/atoms";
+
 // Molecules
 import { Breadcrumb } from "@/components/molecules";
 
@@ -37,6 +40,8 @@ export const ScreenProduct = () => {
       />
 
       <DetailsProduct data={product} />
+
+      <Line />
     </S.Container>
   );
 };
