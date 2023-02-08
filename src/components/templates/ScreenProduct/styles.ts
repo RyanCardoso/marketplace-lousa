@@ -11,3 +11,19 @@ export const Container = styled.div`
     margin-top: 18px;
   }
 `;
+
+export const BoxBtnMobile = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    position: sticky;
+    top: calc(100% - 84px);
+
+    display: flex;
+    align-items: center;
+    height: 84px;
+
+    z-index: 99;
+    background-color: #fff;
+  }
+`;

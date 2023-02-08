@@ -36,14 +36,12 @@ export const DetailsProduct = ({ data }: any) => {
         <S.Price>{handlePrice(data)}</S.Price>
         <S.Descriptions>{data.description}</S.Descriptions>
 
-        <S.BoxButton>
-          <Button
-            label="Solicitar orçamento pelo Whatsapp"
-            width="284px"
-            height="52px"
-            backgroundColor="#25D366"
-          />
-        </S.BoxButton>
+        <Button
+          label="Solicitar orçamento pelo Whatsapp"
+          width="284px"
+          height="52px"
+          backgroundColor="#25D366"
+        />
       </S.AboutProduct>
     </S.Container>
   );

@@ -39,7 +39,18 @@ export const ScreenProduct = () => {
         ]}
       />
       <DetailsProduct data={product} />
+
+      <S.BoxBtnMobile>
+        <Button
+          label="Solicitar orçamento pelo Whatsapp"
+          width="none"
+          height="52px"
+          backgroundColor="#25D366"
+        />
+      </S.BoxBtnMobile>
+
       <Line />
+
       <RelatedProducts />
     </S.Container>
   );

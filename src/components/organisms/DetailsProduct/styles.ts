@@ -11,6 +11,10 @@ export const Container = styled.section`
 
   @media (max-width: 768px) {
     flex-direction: column;
+
+    button {
+      display: none;
+    }
   }
 `;
 
@@ -49,14 +53,4 @@ export const Price = styled.h3`
 export const Descriptions = styled.p`
   color: #404040 red;
   line-height: 24px;
-`;
-
-export const BoxButton = styled.div`
-  width: 100%;
-
-  @media (max-width: 768px) {
-    button {
-      max-width: none;
-    }
-  }
 `;
