@@ -15,6 +15,11 @@ export const Card = styled.div`
     width: 100% !important;
     height: 100% !important;
   }
+
+  @media (max-width: 768px) {
+    height: 70vw;
+    min-height: 280px;
+  }
 `;
 
 export const BoxThumbnail = styled.div`
@@ -45,5 +50,10 @@ export const Thumbnail = styled.figure`
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    width: 70.67px !important;
+    height: 70.67px !important;
   }
 `;

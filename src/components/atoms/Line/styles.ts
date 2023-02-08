@@ -12,5 +12,9 @@ export const Container = styled.div<LineStylesTypes>`
     margin: ${margin || "56px 0"};
 
     border: 1px solid #e4e3e3;
+
+    @media (max-width: 768px) {
+      margin: ${margin || "32px 0"};
+    }
   `}
 `;

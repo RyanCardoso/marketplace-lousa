@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   padding-bottom: 97px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 9px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -35,5 +39,10 @@ export const BoxProducts = styled.div`
   }
 
   ::-webkit-scrollbar-thumb:hover {
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    margin-top: 24px;
   }
 `;

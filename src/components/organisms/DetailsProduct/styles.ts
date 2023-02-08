@@ -8,11 +8,20 @@ export const Container = styled.section`
 
   gap: 27px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const Gallery = styled.div`
   width: 50%;
   max-width: 600px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: none;
+  }
 `;
 
 export const AboutProduct = styled.div`
@@ -31,9 +40,23 @@ export const Price = styled.h3`
     text-decoration: line-through 1.5px;
     margin-right: 10px;
   }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const Descriptions = styled.p`
   color: #404040 red;
   line-height: 24px;
+`;
+
+export const BoxButton = styled.div`
+  width: 100%;
+
+  @media (max-width: 768px) {
+    button {
+      max-width: none;
+    }
+  }
 `;
