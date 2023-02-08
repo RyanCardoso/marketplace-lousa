@@ -14,7 +14,7 @@ import { BoxSlider } from "../Slider";
 export const Depositions = () => {
   return (
     <S.Container>
-      <S.Wrapper>
+      <S.Wrapper data-aos="fade-up">
         <h2>Confira os depoimentos dos nossos clientes</h2>
 
         <BoxSlider type="tertiary">

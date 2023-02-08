@@ -15,6 +15,11 @@ export const Container = styled.section`
     button {
       display: none;
     }
+
+    [data-aos] {
+      opacity: 1;
+      transform: none;
+    }
   }
 `;
 

@@ -15,7 +15,7 @@ interface CardProductType {
 
 export const CardProduct = ({ img, title }: CardProductType) => {
   return (
-    <S.Container>
+    <S.Container data-aos="zoom-in">
       <S.Figure>
         <img src={img} alt="teste" />
         <Button label="Solicitar orçamento" />

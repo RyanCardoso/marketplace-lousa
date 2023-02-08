@@ -28,11 +28,11 @@ const handlePrice = (data: any) => {
 export const DetailsProduct = ({ data }: any) => {
   return (
     <S.Container>
-      <S.Gallery>
-        <Showcase imagens={data.photoswipe} /* product_id={data.id} */ />
+      <S.Gallery data-aos="fade-up-right">
+        <Showcase imagens={data.photoswipe} />
       </S.Gallery>
 
-      <S.AboutProduct>
+      <S.AboutProduct data-aos="fade-up-left">
         <S.Price>{handlePrice(data)}</S.Price>
         <S.Descriptions>{data.description}</S.Descriptions>
 

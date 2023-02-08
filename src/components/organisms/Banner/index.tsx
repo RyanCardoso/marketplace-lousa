@@ -16,7 +16,7 @@ export const Banner = () => {
     <BoxSlider>
       {bannerData.map((item) => (
         <S.Slides key={item.id}>
-          <div>
+          <div data-aos="fade-up">
             <p>New Arrivals</p>
             <h1>{item.name}</h1>
             <Link href={`/produto/${item.id}`}>Shop now</Link>
