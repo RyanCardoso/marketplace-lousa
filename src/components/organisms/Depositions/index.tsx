@@ -1,5 +1,8 @@
 // Libs
-import React from "react";
+import React, { useContext } from "react";
+
+// Contexts
+import { ProductContext } from "@/context/Products";
 
 // Molecules
 import { CardDepositions } from "@/components/molecules";
@@ -12,13 +15,17 @@ import * as S from "./styles";
 import { BoxSlider } from "../Slider";
 
 export const Depositions = () => {
+  const { testimonies } = useContext(ProductContext);
+
+  console.log(testimonies);
+
   return (
     <S.Container>
       <S.Wrapper data-aos="fade-up">
         <h2>Confira os depoimentos dos nossos clientes</h2>
 
         <BoxSlider type="tertiary">
-          {depositionsData.map((d, index) => (
+          {testimonies?.map((d, index) => (
             <CardDepositions
               key={index}
               message={d.message}
