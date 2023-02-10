@@ -1,12 +1,42 @@
 // Libs
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+interface ArrosStyleType {
+  left?: string;
+  right?: string;
+}
 
 export const Container = styled.div`
   width: 100%;
+
+  .variant-tertiary {
+    .slick-track {
+      display: flex;
+      gap: 52px;
+    }
+
+    .slick-disabled {
+      display: none !important;
+    }
+
+    .slick-list {
+      padding: 32px 0 3px 3px;
+    }
+
+    @media (max-width: 798px) {
+      .slick-track {
+        gap: 0;
+      }
+
+      .slick-list {
+        padding: 32px 0 3px 0px;
+      }
+    }
+  }
 `;
 
 // Primary
-export const Dots = styled.div`
+export const DotsNumber = styled.div`
   bottom: 25px;
 
   .slick-active {
@@ -15,84 +45,79 @@ export const Dots = styled.div`
 `;
 
 // Secondary
-export const AppendDots = styled.div`
-  position: static;
-  margin-top: 10px;
+export const SampleNextArrow = styled.div<ArrosStyleType>`
+  ${({ right }) => css`
+    width: 48px;
+    height: 48px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    right: ${right || "-24px"};
 
-  ul {
-    display: flex;
-    gap: 20px;
+    background-color: #033573;
 
-    .slick-active {
-      opacity: 1;
+    z-index: 99;
+
+    &:hover {
+      background-color: #033573;
     }
 
-    li {
-      width: 155px;
-      height: 155px;
-
-      margin: 0;
-
-      opacity: 0.5;
-      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12),
-        0px 2px 2px rgba(0, 0, 0, 0.24);
+    &::before {
+      content: "";
     }
-  }
+
+    @media (max-width: 785px) {
+      width: 32px;
+      height: 32px;
+      top: calc(100% - 16px);
+      right: calc(50% - 45px);
+
+      img {
+        width: 18.62px;
+      }
+    }
+  `}
 `;
 
-export const DotsImg = styled.figure`
-  margin: 0;
-  width: 100%;
-  height: 100%;
+export const SamplePrevArrow = styled(SampleNextArrow)<ArrosStyleType>`
+  ${({ left }) => css`
+    left: ${left || "-24px"};
 
-  > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    img {
+      transform: scale(-1);
+    }
+
+    @media (max-width: 785px) {
+      left: calc(50% - 45px);
+    }
+  `}
 `;
 
 // Terciary
-export const SampleNextArrow = styled.div`
-  width: 48px;
-  height: 48px;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  right: -24px;
+export const RoundDots = styled.div`
+  bottom: -50px;
 
-  background-color: #033573;
+  ul {
+    li {
+      margin: 0;
 
-  z-index: 99;
-
-  &:hover {
-    background-color: #033573;
-  }
-
-  &::before {
-    content: "";
-  }
-
-  @media (max-width: 785px) {
-    width: 32px;
-    height: 32px;
-    top: calc(100% - 16px);
-    right: calc(50% - 45px);
-
-    img {
-      width: 18.62px;
+      button {
+        &::before {
+          color: #033573;
+          font-size: 8px;
+          opacity: 1;
+        }
+      }
     }
-  }
-`;
 
-export const SamplePrevArrow = styled(SampleNextArrow)`
-  left: -24px;
-
-  img {
-    transform: scale(-1);
-  }
-
-  @media (max-width: 785px) {
-    left: calc(50% - 45px);
+    .slick-active {
+      button {
+        &::before {
+          color: #033573;
+          font-size: 12px;
+          opacity: 1;
+        }
+      }
+    }
   }
 `;

@@ -5,7 +5,7 @@ import React from "react";
 import { Ads } from "@/components/molecules";
 
 // Organisms
-import { Banner, OurServices } from "@/components/organisms";
+import { Banner, OurServices, ServicesSlide } from "@/components/organisms";
 
 export const ScreenRenovationServices = () => {
   return (
@@ -14,10 +14,9 @@ export const ScreenRenovationServices = () => {
         img="/images/bannerDesktop.png"
         imgMobile="/images/bannerMobile.png"
       />
-
       <OurServices />
-
       <Ads />
+      <ServicesSlide />
     </>
   );
 };

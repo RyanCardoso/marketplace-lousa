@@ -35,7 +35,9 @@ export const BoxCard = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 224px;
+  width: 20%;
+  min-width: 224px;
+
   text-align: center;
 
   h4 {

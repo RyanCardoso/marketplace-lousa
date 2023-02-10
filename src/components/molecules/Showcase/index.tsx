@@ -4,9 +4,6 @@ import React, { useState, useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Organisms
-/* import { BoxSlider } from "@/components/organisms"; */
-
 // Types
 import { PhotoswipeDTO } from "@/types/product";
 
@@ -16,11 +13,10 @@ import Slider from "react-slick";
 import { ImageZoom } from "@/components/atoms";
 
 interface PhotoswipeProps {
-  /* product_id: string; */
   imagens: PhotoswipeDTO[];
 }
 
-export const Showcase = ({ imagens /* product_id */ }: PhotoswipeProps) => {
+export const Showcase = ({ imagens }: PhotoswipeProps) => {
   const [nav1, setNav1] = useState<any>(null);
   const [nav2, setNav2] = useState<any>(null);
 
@@ -77,26 +73,6 @@ export const Showcase = ({ imagens /* product_id */ }: PhotoswipeProps) => {
           ))}
         </Slider>
       </S.BoxThumbnail>
-
-      {/* <BoxSlider type="secondary" product_id={product_id}>
-      {imagens?.map((item) => (
-        <S.Card key={item.src}>
-          {item.type === "img" ? (
-            <img src={item.src} alt={item.alt} />
-          ) : (
-            <video controls style={{ width: "500px", height: "500px" }}>
-              <source src={item.src} />
-            </video>
-          )}
-        </S.Card>
-      ))}
-    </BoxSlider> */}
-
-      {/* <div>
-        {imagens?.slice(0, 1).map((item) => (
-          <S.Figure></S.Figure>
-        ))}
-      </div> */}
     </>
   );
 };

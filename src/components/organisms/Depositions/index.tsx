@@ -17,7 +17,7 @@ export const Depositions = () => {
       <S.Wrapper data-aos="fade-up">
         <h2>Confira os depoimentos dos nossos clientes</h2>
 
-        <BoxSlider type="tertiary">
+        <BoxSlider variant="secondary">
           {depositionsData.map((d, index) => (
             <CardDepositions
               key={index}

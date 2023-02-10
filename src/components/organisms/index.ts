@@ -7,3 +7,4 @@ export { Header } from "./Header";
 export { ListProducts } from "./ListProducts";
 export { OurServices } from "./OurServices";
 export { RelatedProducts } from "./RelatedProducts";
+export { ServicesSlide } from "./ServicesSlide";
