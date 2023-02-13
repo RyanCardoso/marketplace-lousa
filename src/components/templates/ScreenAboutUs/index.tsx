@@ -1,9 +1,11 @@
 // Libs
 import React from "react";
 
-// Organisms
-import { About, Banner } from "@/components/organisms";
+// Atoms
 import { Line } from "@/components/atoms";
+
+// Organisms
+import { About, Banner, FormContact } from "@/components/organisms";
 
 export const ScreenAboutUs = () => {
   return (
@@ -15,6 +17,7 @@ export const ScreenAboutUs = () => {
       />
       <About />
       <Line maxWidth="1440px" />
+      <FormContact />
     </>
   );
 };
