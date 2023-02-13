@@ -1,3 +1,4 @@
+export { About } from "./About";
 export { Banner } from "./Banner";
 export { Depositions } from "./Depositions";
 export { BoxSlider } from "./Slider";
