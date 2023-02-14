@@ -25,7 +25,12 @@ export const FormContact = () => {
     setLoading(true);
 
     emailjs
-      .send("service_ihgdmvx", "template_yqjfeiq", data, "DB6bjZCk59A_8YdJT")
+      .send(
+        process.env.NEXT_PUBLIC_SERVICE_ID_EMAILJS,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID_EMAILJS,
+        data,
+        process.env.NEXT_PUBLIC_KEY_EMAILJS
+      )
       .then((res) => setLoading(false))
       .catch((err) => setLoading(false));
   };
