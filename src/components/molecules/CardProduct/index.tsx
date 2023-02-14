@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 
 // Atoms
-import { Button } from "@/components/atoms";
+import { Button, ButtonPlay } from "@/components/atoms";
 
 // Syles
 import * as S from "./styles";
@@ -18,6 +18,7 @@ export const CardProduct = ({ img, title }: CardProductType) => {
     <S.Container data-aos="zoom-in">
       <S.Figure>
         <img src={img} alt="teste" />
+        <ButtonPlay />
         <Button label="Solicitar orçamento" />
       </S.Figure>
 
