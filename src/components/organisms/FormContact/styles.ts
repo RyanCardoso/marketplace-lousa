@@ -27,6 +27,10 @@ export const Form = styled.form`
 
   @media (max-width: 768px) {
     gap: 24px;
+
+    button {
+      max-width: none;
+    }
   }
 `;
 
