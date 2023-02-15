@@ -2,15 +2,14 @@
 import React, { useState } from "react";
 
 // Types
-import { ProductDTO } from "@/types/product";
-
 import { TestimonyDTO } from "@/fragments/testimony";
+import { ListProductsDTO } from "@/fragments/products";
 
 interface ProductContextType {
-  products: ProductDTO[];
+  products: ListProductsDTO[];
   testimonies: TestimonyDTO[];
 
-  handleProduct: (value: ProductDTO[]) => void;
+  handleProducts: (value: ListProductsDTO[]) => void;
   handleTestimonies: (value: TestimonyDTO[]) => void;
 }
 
@@ -23,10 +22,10 @@ export const ProductContext = React.createContext<Partial<ProductContextType>>(
 );
 
 const ProductProvider = ({ children }: ProductProviderType) => {
-  const [products, setProducts] = React.useState<ProductDTO[]>([]);
+  const [products, setProducts] = React.useState<ListProductsDTO[]>([]);
   const [testimonies, setTestimonies] = useState([]);
 
-  const handleProduct = (todo: ProductDTO[]) => {
+  const handleProducts = (todo: ListProductsDTO[]) => {
     setProducts(todo);
   };
 
@@ -36,7 +35,7 @@ const ProductProvider = ({ children }: ProductProviderType) => {
 
   return (
     <ProductContext.Provider
-      value={{ products, testimonies, handleProduct, handleTestimonies }}
+      value={{ products, testimonies, handleProducts, handleTestimonies }}
     >
       {children}
     </ProductContext.Provider>

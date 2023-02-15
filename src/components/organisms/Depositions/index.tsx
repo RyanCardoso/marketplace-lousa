@@ -17,8 +17,6 @@ import { BoxSlider } from "../Slider";
 export const Depositions = () => {
   const { testimonies } = useContext(ProductContext);
 
-  console.log(testimonies);
-
   return (
     <S.Container>
       <S.Wrapper data-aos="fade-up">

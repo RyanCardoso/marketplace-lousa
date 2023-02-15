@@ -15,9 +15,10 @@ import { ScreenHome } from "@/components/templates";
 import { HomeDTO, homeFragment } from "@/fragments/home";
 
 const Home: NextPage<HomeDTO> = ({ data }) => {
-  const { testimonies } = data.home;
-  const { handleTestimonies } = useContext(ProductContext);
+  const { products, testimonies } = data.home;
+  const { handleProducts, handleTestimonies } = useContext(ProductContext);
 
+  handleProducts?.(products);
   handleTestimonies?.(testimonies);
 
   return <ScreenHome />;

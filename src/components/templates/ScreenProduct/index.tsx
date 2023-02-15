@@ -34,8 +34,8 @@ export const ScreenProduct = () => {
     <S.Container>
       <Breadcrumb
         options={[
-          { label: "Produtos", path: "/produtos" },
-          { label: product.name, path: "" },
+          { label: "Produtos", path: "" },
+          { label: product?.name, path: "" },
         ]}
       />
       <DetailsProduct data={product} />
