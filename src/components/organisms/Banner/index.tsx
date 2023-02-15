@@ -1,28 +1,19 @@
 // Libs
 import React from "react";
-import Link from "next/link";
 
-// Organisms
-import { BoxSlider } from "@/components/organisms/Slider";
+// Banners
+import { BannerDefault, BannerDefaultType } from "./Default";
+import { BannerSlide } from "./Slide";
 
-// Styles
-import * as S from "./styles";
+interface BannerType extends BannerDefaultType {
+  variant?: "default" | "slide";
+}
 
-// Data
-import { bannerData } from "@/Mock/bannerData";
+export const Banner = ({ variant = "default", img, imgMobile }: BannerType) => {
+  const variants = {
+    default: <BannerDefault img={img} imgMobile={imgMobile} />,
+    slide: <BannerSlide />,
+  };
 
-export const Banner = () => {
-  return (
-    <BoxSlider>
-      {bannerData.map((item) => (
-        <S.Slides key={item.id}>
-          <div data-aos="fade-up">
-            <p>New Arrivals</p>
-            <h1>{item.name}</h1>
-            <Link href={`/produto/${item.id}`}>Shop now</Link>
-          </div>
-        </S.Slides>
-      ))}
-    </BoxSlider>
-  );
+  return variants[variant];
 };

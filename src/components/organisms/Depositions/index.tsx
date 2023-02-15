@@ -7,12 +7,11 @@ import { ProductContext } from "@/context/Products";
 // Molecules
 import { CardDepositions } from "@/components/molecules";
 
-// Mock
-import { depositionsData } from "@/Mock/depositionsData";
+// Organisms
+import { BoxSlider } from "@/components/organisms";
 
 // Styles
 import * as S from "./styles";
-import { BoxSlider } from "../Slider";
 
 export const Depositions = () => {
   const { testimonies } = useContext(ProductContext);
@@ -22,7 +21,7 @@ export const Depositions = () => {
       <S.Wrapper data-aos="fade-up">
         <h2>Confira os depoimentos dos nossos clientes</h2>
 
-        <BoxSlider type="tertiary">
+        <BoxSlider variant="tertiary">
           {testimonies?.map((d, index) => (
             <CardDepositions
               key={index}
