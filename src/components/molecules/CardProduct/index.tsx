@@ -21,7 +21,7 @@ export const CardProduct = ({ id, video, title }: CardProductType) => {
   return (
     <S.Container id={id} data-aos="zoom-in">
       <S.Figure>
-        <img src={video.thumbnail.url} alt={video.thumbnail.fileName} />
+        <img src={video?.thumbnail.url} alt={video?.thumbnail.fileName} />
         <Button label="Solicitar orçamento" />
       </S.Figure>
 

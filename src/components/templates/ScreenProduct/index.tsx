@@ -1,6 +1,8 @@
 // Libs
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
+
+// Contexts
+import { ProductContext } from "@/context/Products";
 
 // Atoms
 import { Button, Line } from "@/components/atoms";
@@ -11,34 +13,24 @@ import { Breadcrumb } from "@/components/molecules";
 // Organisms
 import { DetailsProduct, RelatedProducts } from "@/components/organisms";
 
-// Mock
-import { productData } from "@/Mock/producData";
+// Types
+import { ListProductsDTO, ProductDTO } from "@/fragments/products";
 
 // Styles
 import * as S from "./styles";
 
 export const ScreenProduct = () => {
-  const router = useRouter();
-  const { uuid } = router.query;
-
-  const [product, setProduct] = useState<any>({});
-
-  useEffect(() => {
-    if (uuid) {
-      const filter = productData.find((i) => i.id === uuid);
-      setProduct(filter);
-    }
-  }, [uuid]);
+  const { product } = useContext(ProductContext);
 
   return (
     <S.Container>
       <Breadcrumb
         options={[
           { label: "Produtos", path: "" },
-          { label: product?.name, path: "" },
+          { label: String(product?.name), path: "" },
         ]}
       />
-      <DetailsProduct data={product} />
+      <DetailsProduct data={product as ProductDTO} />
 
       <S.BoxBtnMobile>
         <Button
@@ -51,7 +43,7 @@ export const ScreenProduct = () => {
 
       <Line />
 
-      <RelatedProducts />
+      <RelatedProducts data={product?.relatedproducts as ListProductsDTO[]} />
     </S.Container>
   );
 };
