@@ -1,21 +1,28 @@
 // Libs
-import React from "react";
+import React, { useContext } from "react";
+
+// Contexts
+import { ProductContext } from "@/context/Products";
 
 // Molecules
 import { CardProduct } from "@/components/molecules";
-
-// Mock
-import { productData } from "@/Mock/producData";
 
 // Styles
 import * as S from "./styles";
 
 export const ListProducts = () => {
+  const { products } = useContext(ProductContext);
+
   return (
     <S.Container>
       <S.Wrapper>
-        {productData.map((p, index) => (
-          <CardProduct key={index} img="" title="Lousa de video" />
+        {products?.map((product) => (
+          <CardProduct
+            key={product?.id}
+            id={product?.id}
+            video={product?.productVideo}
+            title={product?.name}
+          />
         ))}
       </S.Wrapper>
     </S.Container>

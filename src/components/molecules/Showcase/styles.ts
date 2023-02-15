@@ -9,9 +9,9 @@ export const Card = styled.div`
   max-height: 555px;
 
   /* overflow: hidden; */
-  background-color: #ddd;
+  /* background-color: #ddd; */
 
-  video {
+  iframe {
     width: 100% !important;
     height: 100% !important;
   }

@@ -55,7 +55,7 @@ export const Price = styled.h3`
   }
 `;
 
-export const Descriptions = styled.p`
-  color: #404040 red;
+export const Description = styled.div`
+  color: #404040;
   line-height: 24px;
 `;

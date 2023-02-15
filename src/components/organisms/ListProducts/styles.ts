@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   transition: 1s;
 
   padding: 83px 0 69px;
