@@ -63,7 +63,7 @@ export const Container = styled.button`
     }
 
     &::after {
-      animation-delay: 0.5s;
+      animation-delay: 1s;
     }
   }
 `;
