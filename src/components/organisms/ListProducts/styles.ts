@@ -28,3 +28,10 @@ export const Wrapper = styled.div`
     width: 85%;
   }
 `;
+
+export const Iframe = styled.iframe`
+  width: 100%;
+  height: 70vh;
+
+  border: none;
+`;

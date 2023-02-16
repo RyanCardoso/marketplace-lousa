@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 
 // Atoms
-import { Button } from "@/components/atoms";
+import { Button, ButtonPlay } from "@/components/atoms";
 
 // Types
 import { ProductVideoDTO } from "@/fragments/products";
@@ -15,13 +15,15 @@ interface CardProductType {
   id: string;
   video: ProductVideoDTO;
   title: string;
+  onClick?: () => void;
 }
 
-export const CardProduct = ({ id, video, title }: CardProductType) => {
+export const CardProduct = ({ id, video, title, onClick }: CardProductType) => {
   return (
     <S.Container id={id} data-aos="zoom-in">
       <S.Figure>
         <img src={video?.thumbnail.url} alt={video?.thumbnail.fileName} />
+        <ButtonPlay onClick={onClick} />
         <Button label="Solicitar orçamento" />
       </S.Figure>
 

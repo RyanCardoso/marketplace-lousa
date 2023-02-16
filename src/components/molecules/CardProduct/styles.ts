@@ -22,8 +22,8 @@ export const Figure = styled.figure`
 
     object-fit: contain;
   }
-
-  button {
+  
+  button:last-child {
     position: absolute;
     width: 224px;
     height: 52px;
@@ -37,7 +37,7 @@ export const Figure = styled.figure`
   }
 
   &:hover {
-    button {
+    button:last-child {
       bottom: 30px;
 
       opacity: 1;
