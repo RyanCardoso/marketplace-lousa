@@ -7,7 +7,7 @@ import { Banner, Depositions, ListProducts } from "@/components/organisms";
 export const ScreenHome = () => {
   return (
     <>
-      <Banner />
+      <Banner variant="slide" />
       <ListProducts />
       <Depositions />
     </>

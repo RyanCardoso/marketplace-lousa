@@ -12,17 +12,16 @@ import { settings } from "./config";
 interface BoxSliderProps {
   product_id?: string;
   children: ReactNode;
-  type?: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "tertiary";
 }
 
 export const BoxSlider = ({
   children,
-  type = "primary",
-  product_id,
+  variant = "primary",
 }: BoxSliderProps) => {
   return (
     <S.Container>
-      <Slider {...settings(product_id)[type]}>{children}</Slider>
+      <Slider {...settings[variant]}>{children}</Slider>
     </S.Container>
   );
 };
