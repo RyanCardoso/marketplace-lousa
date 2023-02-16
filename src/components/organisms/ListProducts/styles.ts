@@ -8,24 +8,32 @@ export const Container = styled.section`
 export const Wrapper = styled.div`
   width: 95%;
   max-width: 1440px;
+  min-height: 500px;
 
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  transition: 1s;
-
-  padding: 83px 0 69px;
-  column-gap: 31px;
-  row-gap: 45px;
+  flex-direction: column;
+  align-items: flex-start;
 
   margin: 0 auto;
-
-  @media (max-width: 1045px) {
-    justify-content: space-evenly;
-  }
+  padding: 29px 0 69px;
 
   @media (max-width: 786px) {
     width: 85%;
+  }
+`;
+
+export const List = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  transition: 1s;
+
+  margin-top: 34px;
+  column-gap: 31px;
+  row-gap: 45px;
+
+  @media (max-width: 1045px) {
+    justify-content: space-evenly;
   }
 `;
 

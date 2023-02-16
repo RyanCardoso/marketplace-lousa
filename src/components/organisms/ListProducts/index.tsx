@@ -8,16 +8,21 @@ import { ProductContext } from "@/context/Products";
 import { Modal } from "@/components/organisms";
 
 // Molecules
-import { CardProduct } from "@/components/molecules";
+import { CardProduct, Tabs } from "@/components/molecules";
 
 // Styles
 import * as S from "./styles";
 
 export const ListProducts = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [urlVideo, setUrlVideo] = useState<string>();
+  const [urlVideo, setUrlVideo] = useState<string>("");
+  const [tab, setTab] = useState<number>(0);
 
   const { products } = useContext(ProductContext);
+
+  const handleCurrentTab = (currentTab: number) => {
+    setTab(currentTab);
+  };
 
   const openMenu = (link: string) => {
     setIsOpen(true);
@@ -27,15 +32,23 @@ export const ListProducts = () => {
   return (
     <S.Container>
       <S.Wrapper>
-        {products?.map((product) => (
-          <CardProduct
-            key={product?.id}
-            id={product?.id}
-            video={product?.productVideo}
-            title={product?.name}
-            onClick={() => openMenu(product.productVideo.link)}
-          />
-        ))}
+        <Tabs
+          items={["Lousa de vidro", "Espelhos"]}
+          onChangeTab={handleCurrentTab}
+        />
+
+        <S.List>
+          {tab === 0 &&
+            products?.map((product) => (
+              <CardProduct
+                key={product?.id}
+                id={product?.id}
+                video={product?.productVideo}
+                title={product?.name}
+                onClick={() => openMenu(product.productVideo.link)}
+              />
+            ))}
+        </S.List>
       </S.Wrapper>
 
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
