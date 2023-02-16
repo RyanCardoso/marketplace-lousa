@@ -1,30 +1,34 @@
 // Libs
 import React, { useState, useRef } from "react";
+import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// Atoms
+import { ImageZoom } from "@/components/atoms";
+
 // Types
-import { PhotoswipeDTO } from "@/types/product";
+import { ProductShowCaseDTO } from "@/fragments/products";
 
 // Styles
 import * as S from "./styles";
-import Slider from "react-slick";
-import { ImageZoom } from "@/components/atoms";
 
 interface PhotoswipeProps {
-  imagens: PhotoswipeDTO[];
+  productShowcase: ProductShowCaseDTO;
 }
 
-export const Showcase = ({ imagens }: PhotoswipeProps) => {
+export const Showcase = ({ productShowcase }: PhotoswipeProps) => {
   const [nav1, setNav1] = useState<any>(null);
   const [nav2, setNav2] = useState<any>(null);
 
   const vidRef = useRef<any>(null);
 
+  const { images, productVideos } = productShowcase ?? {};
+
   const pauseVideo = () => {
     if (vidRef.current) {
-      vidRef.current.pause();
+      /* vidRef.current.pause(); */
     }
   };
 
@@ -37,18 +41,21 @@ export const Showcase = ({ imagens }: PhotoswipeProps) => {
           ref={(slider1) => setNav1(slider1)}
           afterChange={() => pauseVideo()}
         >
-          {imagens?.map((item) => (
-            <S.Card key={item.src}>
-              {item.type === "img" && <ImageZoom img={item} />}
-              {item.type === "video" && (
-                <video
-                  ref={vidRef}
-                  controls
-                  style={{ width: "500px", height: "500px" }}
-                >
-                  <source src={item.src} />
-                </video>
-              )}
+          {images?.map((image) => (
+            <S.Card key={image.id}>
+              <ImageZoom img={{ src: image.url, alt: image.fileName }} />
+            </S.Card>
+          ))}
+
+          {productVideos?.map((video) => (
+            <S.Card key={video?.id}>
+              <iframe
+                /* ref={vidRef} */
+                src={video?.link}
+                title=""
+                allow="autoplay"
+                allowFullScreen
+              ></iframe>
             </S.Card>
           ))}
         </Slider>
@@ -63,12 +70,15 @@ export const Showcase = ({ imagens }: PhotoswipeProps) => {
           swipeToSlide={true}
           focusOnSelect={true}
         >
-          {imagens?.map((item, index) => (
-            <S.Thumbnail key={index}>
-              <img
-                src={item.type === "img" ? item.src : item.thumbnail}
-                alt={item.alt}
-              />
+          {images?.map((image) => (
+            <S.Thumbnail key={image?.id}>
+              <img src={image?.url} alt={image?.fileName} />
+            </S.Thumbnail>
+          ))}
+
+          {productVideos?.map((video) => (
+            <S.Thumbnail key={video?.id}>
+              <img src={video?.thumbnail.url} alt={video?.thumbnail.fileName} />
             </S.Thumbnail>
           ))}
         </Slider>

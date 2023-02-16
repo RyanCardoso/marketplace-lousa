@@ -1,35 +1,39 @@
 // Libs
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
+// Contexts
+import { ProductContext } from "@/context/Products";
+
+// Organisms
+import { Modal } from "@/components/organisms";
 
 // Molecules
 import { CardProduct } from "@/components/molecules";
 
-// Mock
-import { productData } from "@/Mock/producData";
-
 // Styles
 import * as S from "./styles";
-import { Modal } from "../Modal";
 
 export const ListProducts = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [urlVideo, setUrlVideo] = useState<string>(
-    "https://drive.google.com/file/d/1NQlhO7-8--k4T74cjE5OYVMNAXIIuylI/preview"
-  );
+  const [urlVideo, setUrlVideo] = useState<string>();
 
-  const openMenu = () => {
+  const { products } = useContext(ProductContext);
+
+  const openMenu = (link: string) => {
     setIsOpen(true);
+    setUrlVideo(link);
   };
 
   return (
     <S.Container>
       <S.Wrapper>
-        {productData.map((p, index) => (
+        {products?.map((product) => (
           <CardProduct
-            key={index}
-            img=""
-            title="Lousa de video"
-            onClick={() => openMenu()}
+            key={product?.id}
+            id={product?.id}
+            video={product?.productVideo}
+            title={product?.name}
+            onClick={() => openMenu(product.productVideo.link)}
           />
         ))}
       </S.Wrapper>

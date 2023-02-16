@@ -16,6 +16,13 @@ export const Figure = styled.figure`
   overflow: hidden;
   background-color: rgb(245, 245, 245);
 
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+  
   button:last-child {
     position: absolute;
     width: 224px;
