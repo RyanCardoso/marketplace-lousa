@@ -1,11 +1,11 @@
 // Libs
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
+// Contexts
+import { ProductContext } from "@/context/Products";
 
 // Molecules
 import { CardProduct } from "@/components/molecules";
-
-// Mock
-import { productData } from "@/Mock/producData";
 
 // Styles
 import * as S from "./styles";
@@ -17,6 +17,8 @@ export const ListProducts = () => {
     "https://drive.google.com/file/d/1NQlhO7-8--k4T74cjE5OYVMNAXIIuylI/preview"
   );
 
+  const { products } = useContext(ProductContext);
+
   const openMenu = () => {
     setIsOpen(true);
   };
@@ -24,13 +26,14 @@ export const ListProducts = () => {
   return (
     <S.Container>
       <S.Wrapper>
-        {productData.map((p, index) => (
+        {products?.map((product) => (
           <CardProduct
-            key={index}
-            img=""
-            title="Lousa de video"
+            key={product?.id}
+            id={product?.id}
+            video={product?.productVideo}
+            title={product?.name}
             onClick={() => openMenu()}
-          />
+           />
         ))}
       </S.Wrapper>
 

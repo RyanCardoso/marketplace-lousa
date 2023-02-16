@@ -17,6 +17,13 @@ export const Figure = styled.figure`
   background-color: rgb(245, 245, 245);
 
   button:last-child {
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
     position: absolute;
     width: 224px;
     height: 52px;
