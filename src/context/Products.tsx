@@ -7,11 +7,12 @@ import { ListProductsDTO, ProductDTO } from "@/fragments/products";
 
 interface ProductContextType {
   product: ProductDTO;
-  products: ListProductsDTO[];
+  boards: ListProductsDTO[];
+  mirrors: ListProductsDTO[];
   testimonies: TestimonyDTO[];
-
   handleProduct: (value: ProductDTO) => void;
-  handleProducts: (value: ListProductsDTO[]) => void;
+  handleBoards: (value: ListProductsDTO[]) => void;
+  handleMirrors: (value: ListProductsDTO[]) => void;
   handleTestimonies: (value: TestimonyDTO[]) => void;
 }
 
@@ -25,15 +26,21 @@ export const ProductContext = React.createContext<Partial<ProductContextType>>(
 
 const ProductProvider = ({ children }: ProductProviderType) => {
   const [product, setProduct] = useState<ProductDTO>();
-  const [products, setProducts] = useState<ListProductsDTO[]>([]);
+  const [boards, setBoards] = useState<ListProductsDTO[]>([]);
+  const [mirrors, setMirrors] = useState<ListProductsDTO[]>([]);
+
   const [testimonies, setTestimonies] = useState([]);
 
   const handleProduct = (item: ProductDTO) => {
     setProduct(item);
   };
 
-  const handleProducts = (todo: ListProductsDTO[]) => {
-    setProducts(todo);
+  const handleBoards = (todo: ListProductsDTO[]) => {
+    setBoards(todo);
+  };
+
+  const handleMirrors = (todo: ListProductsDTO[]) => {
+    setMirrors(todo);
   };
 
   const handleTestimonies = (value: any) => {
@@ -44,10 +51,12 @@ const ProductProvider = ({ children }: ProductProviderType) => {
     <ProductContext.Provider
       value={{
         product,
-        products,
+        boards,
+        mirrors,
         testimonies,
         handleProduct,
-        handleProducts,
+        handleBoards,
+        handleMirrors,
         handleTestimonies,
       }}
     >

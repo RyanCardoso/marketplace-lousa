@@ -18,7 +18,7 @@ export const ListProducts = () => {
   const [urlVideo, setUrlVideo] = useState<string>("");
   const [tab, setTab] = useState<number>(0);
 
-  const { products } = useContext(ProductContext);
+  const { boards, mirrors } = useContext(ProductContext);
 
   const handleCurrentTab = (currentTab: number) => {
     setTab(currentTab);
@@ -39,7 +39,18 @@ export const ListProducts = () => {
 
         <S.List>
           {tab === 0 &&
-            products?.map((product) => (
+            boards?.map((product) => (
+              <CardProduct
+                key={product?.id}
+                id={product?.id}
+                video={product?.productVideo}
+                title={product?.name}
+                onClick={() => openMenu(product.productVideo.link)}
+              />
+            ))}
+
+          {tab === 1 &&
+            mirrors?.map((product) => (
               <CardProduct
                 key={product?.id}
                 id={product?.id}
