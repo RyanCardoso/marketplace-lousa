@@ -1,15 +1,33 @@
 // Libs
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 interface ModalStylesType {
-  isOpen: boolean;
+  isFadeOut: boolean;
 }
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
 export const Container = styled.section<ModalStylesType>`
-  ${({ isOpen }) => css`
+  ${({ isFadeOut }) => css`
     position: fixed;
     width: 100%;
-    height: ${isOpen ? "100vh" : "0"};
+    height: 100vh;
     top: 0;
     left: 0;
 
@@ -19,9 +37,8 @@ export const Container = styled.section<ModalStylesType>`
 
     z-index: 9999;
     overflow: hidden;
-    opacity: ${isOpen ? "1" : "0"};
-    transition: opacity 0.5s ease;
     background-color: rgba(0, 0, 0, 0.5);
+    animation: ${isFadeOut ? fadeOut : fadeIn} 0.3s ease-in-out forwards;
   `}
 `;
 
