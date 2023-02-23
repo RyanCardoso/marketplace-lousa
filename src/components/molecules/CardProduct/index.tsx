@@ -16,15 +16,22 @@ interface CardProductType {
   video: ProductVideoDTO;
   title: string;
   onClick?: () => void;
+  onButtonClick?: () => void;
 }
 
-export const CardProduct = ({ id, video, title, onClick }: CardProductType) => {
+export const CardProduct = ({
+  id,
+  video,
+  title,
+  onClick,
+  onButtonClick,
+}: CardProductType) => {
   return (
     <S.Container id={id} data-aos="zoom-in">
       <S.Figure>
         <img src={video?.thumbnail.url} alt={video?.thumbnail.fileName} />
         <ButtonPlay onClick={onClick} />
-        <Button label="Solicitar orçamento" />
+        <Button label="Solicitar orçamento" onClick={onButtonClick} />
       </S.Figure>
 
       <S.Title>{title}</S.Title>
