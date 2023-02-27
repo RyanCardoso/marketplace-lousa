@@ -1,12 +1,10 @@
 // Libs
 import React, { useState, useRef } from "react";
+import ImageZoom from "react-image-zooom";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-// Atoms
-import { ImageZoom } from "@/components/atoms";
 
 // Types
 import { ProductShowCaseDTO } from "@/fragments/products";
@@ -43,7 +41,7 @@ export const Showcase = ({ productShowcase }: PhotoswipeProps) => {
         >
           {images?.map((image) => (
             <S.Card key={image.id}>
-              <ImageZoom img={{ src: image.url, alt: image.fileName }} />
+              <ImageZoom src={image.url} alt={image.fileName} />
             </S.Card>
           ))}
 

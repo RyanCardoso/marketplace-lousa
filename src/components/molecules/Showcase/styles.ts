@@ -16,6 +16,11 @@ export const Card = styled.div`
     height: 100% !important;
   }
 
+  figure {
+    width: 100%;
+    height: 100%;
+  }
+
   @media (max-width: 768px) {
     height: 70vw;
     min-height: 280px;
