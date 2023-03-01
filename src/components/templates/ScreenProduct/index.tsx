@@ -1,5 +1,6 @@
 // Libs
 import React, { useContext } from "react";
+import Head from "next/head";
 
 // Contexts
 import { ProductContext } from "@/context/Products";
@@ -27,6 +28,11 @@ export const ScreenProduct = () => {
 
   return (
     <S.Container>
+      <Head>
+        <title>{product?.name}</title>
+        <meta name="description" content={product?.description.html} />
+      </Head>
+
       <Breadcrumb
         options={[
           { label: "Produtos", path: "" },
