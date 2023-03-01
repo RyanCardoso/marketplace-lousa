@@ -2,33 +2,20 @@
 import styled, { css } from "styled-components";
 
 interface HeaderStylesProps {
-  isFixed?: boolean;
   isOpen?: boolean;
 }
 
-const headerFixed = css`
-  position: sticky;
-  top: 0;
-
-  box-shadow: 0 2px 12px -3px rgb(0, 0, 0);
-  /* transition: 0.5s; */
-`;
-
 export const Container = styled.div<HeaderStylesProps>`
-  ${({ isFixed }) => css`
-    position: sticky;
-    width: 100%;
-    top: 0;
-    left: 0;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
 
-    padding: 9.16px 0;
+  padding: 9.16px 0;
 
-    z-index: 999;
-    background-color: #fff;
-    border-bottom: 1px solid #f2f1f1;
-
-    ${isFixed && headerFixed}
-  `}
+  z-index: 999;
+  background-color: #fff;
+  border-bottom: 1px solid #f2f1f1;
 `;
 
 export const Wrapper = styled.div`
@@ -61,17 +48,22 @@ export const ActionMenu = styled.a`
 `;
 
 export const Dropdown = styled.div<HeaderStylesProps>`
-  display: none;
+  ${({ isOpen }) => css`
+    display: none;
 
-  @media (max-width: 768px) {
-    display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-    position: absolute;
-    width: 100%;
-    top: 100%;
+    @media (max-width: 768px) {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: calc(100vh - 62.98px);
+      top: calc(100% + 1px);
+      left: ${isOpen ? 0 : "-100%"};
+      visibility: ${isOpen ? "visible" : "hidden"};
 
-    transition: 1s;
-    background-color: #fff;
-  }
+      background-color: #fff;
+      transition: 0.3s ease-in-out;
+    }
+  `}
 `;
 
 export const Content = styled.nav`

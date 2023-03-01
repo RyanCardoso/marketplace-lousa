@@ -5,27 +5,29 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Mock
-import { productData } from "@/Mock/producData";
+// Molecules
+import { CardProduct } from "@/components/molecules";
 
 // Styles
 import * as S from "./styles";
-import { CardProduct } from "@/components/molecules";
+import { ListProductsDTO } from "@/fragments/products";
 
-export const RelatedProducts = () => {
-  const [products, setProducts] = useState<any[]>([]);
+interface RelatedProductsType {
+  data: ListProductsDTO[];
+}
 
-  useEffect(() => {
-    const random = productData.sort(() => 0.5 - Math.random()).slice(0, 4);
-    setProducts(random);
-  }, []);
-
+export const RelatedProducts = ({ data }: RelatedProductsType) => {
   return (
     <S.Container>
       <S.Title>Produtos relacionados</S.Title>
       <S.BoxProducts>
-        {products?.map((item, index) => (
-          <CardProduct key={index} img="" title={item?.name} />
+        {data?.map((item, index) => (
+          <CardProduct
+            key={item.id}
+            id={item.id}
+            video={item.productVideo}
+            title={item?.name}
+          />
         ))}
       </S.BoxProducts>
     </S.Container>

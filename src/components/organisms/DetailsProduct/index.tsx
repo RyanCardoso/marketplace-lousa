@@ -1,21 +1,27 @@
 // Libs
 import React from "react";
 
+// Atoms
+import { Button } from "@/components/atoms";
+
 // Molecules
 import { Showcase } from "@/components/molecules";
 
 // Utils
 import { formatMoney } from "@/utils/consts";
+import { sendProductWhatsapp } from "@/utils/send-product-whatsapp";
+
+// Types
+import { ProductDTO } from "@/fragments/products";
 
 // Styles
 import * as S from "./styles";
-import { Button } from "@/components/atoms";
 
-const handlePrice = (data: any) => {
-  const formatPrice = formatMoney(data.price);
-  const formatPromotion = formatMoney(data.promotion);
+const handlePrice = (price: number, promotion: number) => {
+  const formatPrice = formatMoney(price);
+  const formatPromotion = formatMoney(promotion);
 
-  if (data?.promotion)
+  if (promotion)
     return (
       <>
         <span>{formatPrice}</span> {formatPromotion}
@@ -25,22 +31,31 @@ const handlePrice = (data: any) => {
   return formatPrice;
 };
 
-export const DetailsProduct = ({ data }: any) => {
+interface DetailsProductType {
+  data: ProductDTO;
+}
+
+export const DetailsProduct = ({ data }: DetailsProductType) => {
+  const { productShowcase, price, promotion, description } = data ?? {};
+
   return (
     <S.Container>
       <S.Gallery data-aos="fade-up-right">
-        <Showcase imagens={data.photoswipe} />
+        <Showcase productShowcase={productShowcase} />
       </S.Gallery>
 
       <S.AboutProduct data-aos="fade-up-left">
-        <S.Price>{handlePrice(data)}</S.Price>
-        <S.Descriptions>{data.description}</S.Descriptions>
+        <S.Price>{handlePrice(price, promotion)}</S.Price>
+        <S.Description
+          dangerouslySetInnerHTML={{ __html: description?.html }}
+        ></S.Description>
 
         <Button
           label="Solicitar orçamento pelo Whatsapp"
           width="284px"
           height="52px"
           backgroundColor="#25D366"
+          onClick={() => sendProductWhatsapp(data?.name, data?.id)}
         />
       </S.AboutProduct>
     </S.Container>

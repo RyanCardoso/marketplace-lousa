@@ -2,43 +2,44 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-// Hooks
-/* import { useValidateScroll } from "@/hooks/useValidateScroll"; */
-
 // Atoms
 import { Burger, Button, Logo } from "@/components/atoms";
 
 // Styles
 import * as S from "./styles";
 
+const menuItems = [
+  { label: "Home", href: "/" },
+  { label: "Serviços de reforma", href: "/servicos-de-reforma" },
+  { label: "Quem somos", href: "/quem-somos" },
+];
+
 const Menu = () => (
   <S.Menu>
-    <li>
-      <Link href="/">Home</Link>
-    </li>
-    <li>
-      <Link href="/servicos-de-reforma">Serviços de reforma</Link>
-    </li>
-    <li>
-      <Link href="/quem-somos">Quem somos</Link>
-    </li>
+    {menuItems.map((menuItem) => (
+      <li key={menuItem.label}>
+        <Link href={menuItem.href}>{menuItem.label}</Link>
+      </li>
+    ))}
   </S.Menu>
 );
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  /* const sticky = useValidateScroll(); */
+  const handleIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <S.Container isFixed={false}>
+    <S.Container>
       <S.Wrapper>
         <Menu />
 
         <Logo />
 
         <Button label="Solicitar orçamento" isIcon />
-        <Burger onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+        <Burger onClick={handleIsOpen} isOpen={isOpen} />
       </S.Wrapper>
 
       <S.Dropdown isOpen={isOpen}>

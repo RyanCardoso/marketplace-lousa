@@ -16,7 +16,14 @@ export const Figure = styled.figure`
   overflow: hidden;
   background-color: rgb(245, 245, 245);
 
-  button {
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+  
+  button:last-child {
     position: absolute;
     width: 224px;
     height: 52px;
@@ -30,7 +37,7 @@ export const Figure = styled.figure`
   }
 
   &:hover {
-    button {
+    button:last-child {
       bottom: 30px;
 
       opacity: 1;

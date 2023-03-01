@@ -3,26 +3,39 @@ import React from "react";
 import Link from "next/link";
 
 // Atoms
-import { Button } from "@/components/atoms";
+import { Button, ButtonPlay } from "@/components/atoms";
+
+// Types
+import { ProductVideoDTO } from "@/fragments/products";
 
 // Syles
 import * as S from "./styles";
 
 interface CardProductType {
-  img: string;
+  id: string;
+  video: ProductVideoDTO;
   title: string;
+  onClick?: () => void;
+  onButtonClick?: () => void;
 }
 
-export const CardProduct = ({ img, title }: CardProductType) => {
+export const CardProduct = ({
+  id,
+  video,
+  title,
+  onClick,
+  onButtonClick,
+}: CardProductType) => {
   return (
-    <S.Container data-aos="zoom-in">
+    <S.Container id={id} data-aos="zoom-in">
       <S.Figure>
-        <img src={img} alt="teste" />
-        <Button label="Solicitar orçamento" />
+        <img src={video?.thumbnail.url} alt={video?.thumbnail.fileName} />
+        <ButtonPlay onClick={onClick} />
+        <Button label="Solicitar orçamento" onClick={onButtonClick} />
       </S.Figure>
 
       <S.Title>{title}</S.Title>
-      <Link href="#">mais detalhes</Link>
+      <Link href={`/produto/${id}`}>mais detalhes</Link>
     </S.Container>
   );
 };
