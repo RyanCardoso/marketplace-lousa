@@ -20,15 +20,8 @@ export const Showcase = ({ productShowcase }: PhotoswipeProps) => {
   const [nav1, setNav1] = useState<any>(null);
   const [nav2, setNav2] = useState<any>(null);
 
-  const vidRef = useRef<any>(null);
 
   const { images, productVideos } = productShowcase ?? {};
-
-  const pauseVideo = () => {
-    if (vidRef.current) {
-      /* vidRef.current.pause(); */
-    }
-  };
 
   return (
     <>
@@ -37,7 +30,6 @@ export const Showcase = ({ productShowcase }: PhotoswipeProps) => {
           asNavFor={nav2}
           infinite={false}
           ref={(slider1) => setNav1(slider1)}
-          afterChange={() => pauseVideo()}
         >
           {images?.map((image) => (
             <S.Card key={image.id}>

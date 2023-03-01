@@ -9,6 +9,7 @@ import { Showcase } from "@/components/molecules";
 
 // Utils
 import { formatMoney } from "@/utils/consts";
+import { sendProductWhatsapp } from "@/utils/send-product-whatsapp";
 
 // Types
 import { ProductDTO } from "@/fragments/products";
@@ -54,6 +55,7 @@ export const DetailsProduct = ({ data }: DetailsProductType) => {
           width="284px"
           height="52px"
           backgroundColor="#25D366"
+          onClick={() => sendProductWhatsapp(data?.name, data?.id)}
         />
       </S.AboutProduct>
     </S.Container>

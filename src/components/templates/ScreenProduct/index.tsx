@@ -13,6 +13,9 @@ import { Breadcrumb } from "@/components/molecules";
 // Organisms
 import { DetailsProduct, RelatedProducts } from "@/components/organisms";
 
+// Utils
+import { sendProductWhatsapp } from "@/utils/send-product-whatsapp";
+
 // Types
 import { ListProductsDTO, ProductDTO } from "@/fragments/products";
 
@@ -30,16 +33,19 @@ export const ScreenProduct = () => {
           { label: String(product?.name), path: "" },
         ]}
       />
-      <DetailsProduct data={product as ProductDTO} />
-
       <S.BoxBtnMobile>
         <Button
           label="Solicitar orçamento pelo Whatsapp"
           width="none"
           height="52px"
           backgroundColor="#25D366"
+          onClick={() =>
+            sendProductWhatsapp(String(product?.name), String(product?.id))
+          }
         />
       </S.BoxBtnMobile>
+
+      <DetailsProduct data={product as ProductDTO} />
 
       <Line />
 

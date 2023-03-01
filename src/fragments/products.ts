@@ -27,6 +27,7 @@ export interface ListProductsDTO {
 }
 
 export interface ProductDTO {
+  id: string;
   name: string;
   price: number;
   promotion: number;
@@ -57,6 +58,7 @@ export const ProductGql = (id: string) => {
   return gql`
     query {
       product(where: { id: ${formatId}}) {
+        id
         name
         price
         promotion
