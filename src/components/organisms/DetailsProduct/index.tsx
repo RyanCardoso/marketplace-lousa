@@ -8,7 +8,6 @@ import { Button } from "@/components/atoms";
 import { Showcase } from "@/components/molecules";
 
 // Utils
-import { formatMoney } from "@/utils/consts";
 import { sendProductWhatsapp } from "@/utils/send-product-whatsapp";
 
 // Types
@@ -17,26 +16,12 @@ import { ProductDTO } from "@/fragments/products";
 // Styles
 import * as S from "./styles";
 
-const handlePrice = (price: number, promotion: number) => {
-  const formatPrice = formatMoney(price);
-  const formatPromotion = formatMoney(promotion);
-
-  if (promotion)
-    return (
-      <>
-        <span>{formatPrice}</span> {formatPromotion}
-      </>
-    );
-
-  return formatPrice;
-};
-
 interface DetailsProductType {
   data: ProductDTO;
 }
 
 export const DetailsProduct = ({ data }: DetailsProductType) => {
-  const { productShowcase, price, promotion, description } = data ?? {};
+  const { productShowcase, description } = data ?? {};
 
   return (
     <S.Container>
@@ -45,7 +30,6 @@ export const DetailsProduct = ({ data }: DetailsProductType) => {
       </S.Gallery>
 
       <S.AboutProduct data-aos="fade-up-left">
-        <S.Price>{handlePrice(price, promotion)}</S.Price>
         <S.Description
           dangerouslySetInnerHTML={{ __html: description?.html }}
         ></S.Description>

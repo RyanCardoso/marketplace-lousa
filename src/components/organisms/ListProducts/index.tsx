@@ -27,7 +27,7 @@ export const ListProducts = () => {
     setTab(currentTab);
   };
 
-  const openMenu = (link: string) => {
+  const openModal = (link: string) => {
     setIsOpen(true);
     setUrlVideo(link);
   };
@@ -45,10 +45,10 @@ export const ListProducts = () => {
             boards?.map((product) => (
               <CardProduct
                 key={product?.id}
-                id={product?.id}
+                id={product?.slug}
                 video={product?.productVideo}
                 title={product?.name}
-                onClick={() => openMenu(product.productVideo.link)}
+                onClick={() => openModal(product.productVideo.link)}
                 onButtonClick={() =>
                   sendProductWhatsapp(product?.name, product.id)
                 }
@@ -59,10 +59,10 @@ export const ListProducts = () => {
             mirrors?.map((product) => (
               <CardProduct
                 key={product?.id}
-                id={product?.id}
+                id={product?.slug}
                 video={product?.productVideo}
                 title={product?.name}
-                onClick={() => openMenu(product.productVideo.link)}
+                onClick={() => openModal(product.productVideo.link)}
                 onButtonClick={() =>
                   sendProductWhatsapp(product?.name, product.id)
                 }
