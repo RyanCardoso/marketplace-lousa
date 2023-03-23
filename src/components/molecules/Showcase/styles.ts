@@ -14,6 +14,7 @@ export const Card = styled.div`
   iframe {
     width: 100% !important;
     height: 100% !important;
+    border: none;
   }
 
   figure {

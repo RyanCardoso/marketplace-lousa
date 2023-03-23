@@ -1,5 +1,5 @@
 // Libs
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Atoms
 import { Button } from "@/components/atoms";
@@ -8,35 +8,41 @@ import { Button } from "@/components/atoms";
 import { Showcase } from "@/components/molecules";
 
 // Utils
-import { formatMoney } from "@/utils/consts";
 import { sendProductWhatsapp } from "@/utils/send-product-whatsapp";
 
 // Types
 import { ProductDTO } from "@/fragments/products";
 
+// Helpers
+import { msgMirrors, msgSlates } from "./helpers/messages";
+
 // Styles
 import * as S from "./styles";
-
-const handlePrice = (price: number, promotion: number) => {
-  const formatPrice = formatMoney(price);
-  const formatPromotion = formatMoney(promotion);
-
-  if (promotion)
-    return (
-      <>
-        <span>{formatPrice}</span> {formatPromotion}
-      </>
-    );
-
-  return formatPrice;
-};
 
 interface DetailsProductType {
   data: ProductDTO;
 }
 
 export const DetailsProduct = ({ data }: DetailsProductType) => {
-  const { productShowcase, price, promotion, description } = data ?? {};
+  const [isEmptyContent, setIsEmptyContent] = useState<boolean>(false);
+
+  const { productShowcase, description, categorie } = data ?? {};
+
+  const handleValidationContent = () => {
+    const element: HTMLDivElement = document.createElement("div");
+    element.innerHTML = description?.html;
+
+    const validate = element.textContent?.trim().length === 0;
+    setIsEmptyContent(validate);
+  };
+
+  const renderMessages = () => (
+    <p>{categorie === "Lousas" ? msgSlates : msgMirrors}</p>
+  );
+
+  useEffect(() => {
+    handleValidationContent();
+  });
 
   return (
     <S.Container>
@@ -45,10 +51,13 @@ export const DetailsProduct = ({ data }: DetailsProductType) => {
       </S.Gallery>
 
       <S.AboutProduct data-aos="fade-up-left">
-        <S.Price>{handlePrice(price, promotion)}</S.Price>
-        <S.Description
-          dangerouslySetInnerHTML={{ __html: description?.html }}
-        ></S.Description>
+        {isEmptyContent ? (
+          renderMessages()
+        ) : (
+          <S.Description
+            dangerouslySetInnerHTML={{ __html: description?.html }}
+          />
+        )}
 
         <Button
           label="Solicitar orçamento pelo Whatsapp"

@@ -22,6 +22,7 @@ export interface ProductShowCaseDTO {
 
 export interface ListProductsDTO {
   id: string;
+  slug: string;
   name: string;
   productVideo: ProductVideoDTO;
 }
@@ -29,8 +30,7 @@ export interface ListProductsDTO {
 export interface ProductDTO {
   id: string;
   name: string;
-  price: number;
-  promotion: number;
+  categorie: "Lousas" | "Espelhos";
   productShowcase: ProductShowCaseDTO;
   description: {
     html: string;
@@ -41,6 +41,7 @@ export interface ProductDTO {
 export const ListProducts = gql`
     products {
       id
+      slug
       name
       productVideo {
         thumbnail {
@@ -52,16 +53,15 @@ export const ListProducts = gql`
     }
 `;
 
-export const ProductGql = (id: string) => {
-  const formatId = `"${id}"`;
+export const ProductGql = (slug: string) => {
+  const formatSlug = `"${slug}"`;
 
   return gql`
     query {
-      product(where: { id: ${formatId}}) {
+      product(where: { slug: ${formatSlug}}) {
         id
         name
-        price
-        promotion
+        categorie
         productShowcase {
           images {
             id
