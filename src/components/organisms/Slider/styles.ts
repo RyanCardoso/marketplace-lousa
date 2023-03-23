@@ -37,10 +37,21 @@ export const Container = styled.div`
 
 // Primary
 export const DotsNumber = styled.div`
+  color: #ffffff;
   bottom: 25px;
+
+  li {
+    width: auto;
+    margin: 0 10px;
+  }
 
   .slick-active {
     border-bottom: solid 1px;
+  }
+
+  @media (max-width: 768px) {
+    color: #033573;
+    bottom: 5px;
   }
 `;
 
