@@ -27,9 +27,9 @@ const Product: NextPage<PageProductDTO> = ({ data }) => {
 };
 
 export const getServerSideProps = async (context: NextPageContext) => {
-  const { uuid } = context.query;
+  const { slug } = context.query;
 
-  const data = await hygraphClient.request(ProductGql(uuid as string));
+  const data = await hygraphClient.request(ProductGql(slug as string));
 
   return {
     props: { data: data.product },

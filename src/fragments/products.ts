@@ -30,6 +30,7 @@ export interface ListProductsDTO {
 export interface ProductDTO {
   id: string;
   name: string;
+  categorie: "Lousas" | "Espelhos";
   productShowcase: ProductShowCaseDTO;
   description: {
     html: string;
@@ -60,6 +61,7 @@ export const ProductGql = (slug: string) => {
       product(where: { slug: ${formatSlug}}) {
         id
         name
+        categorie
         productShowcase {
           images {
             id
