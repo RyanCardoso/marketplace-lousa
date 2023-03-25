@@ -16,6 +16,7 @@ import { DetailsProduct, RelatedProducts } from "@/components/organisms";
 
 // Utils
 import { sendProductWhatsapp } from "@/utils/send-product-whatsapp";
+import { msgMirrors, msgSlates } from "@/utils/Products/msg-products";
 
 // Types
 import { ListProductsDTO, ProductDTO } from "@/fragments/products";
@@ -26,11 +27,16 @@ import * as S from "./styles";
 export const ScreenProduct = () => {
   const { product } = useContext(ProductContext);
 
+  const handleMsgContent = () => {
+    const isSlates = product?.categorie === "Lousas";
+    return isSlates ? msgSlates : msgMirrors;
+  };
+
   return (
     <S.Container>
       <Head>
         <title>{product?.name}</title>
-        <meta name="description" content={product?.description.html} />
+        <meta name="description" content={handleMsgContent()} />
       </Head>
 
       <Breadcrumb
