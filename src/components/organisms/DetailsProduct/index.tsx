@@ -14,7 +14,7 @@ import { sendProductWhatsapp } from "@/utils/send-product-whatsapp";
 import { ProductDTO } from "@/fragments/products";
 
 // Helpers
-import { msgMirrors, msgSlates } from "./helpers/messages";
+import { msgMirrors, msgSlates } from "@/utils/Products/msg-products";
 
 // Styles
 import * as S from "./styles";
@@ -29,6 +29,11 @@ export const DetailsProduct = ({ data }: DetailsProductType) => {
   const { productShowcase, description, categorie } = data ?? {};
 
   const handleValidationContent = () => {
+    if (!description) {
+      setIsEmptyContent(true);
+      return;
+    }
+
     const element: HTMLDivElement = document.createElement("div");
     element.innerHTML = description?.html;
 
