@@ -7,10 +7,16 @@ import * as S from "./styles";
 interface ModalType {
   children: React.ReactNode;
   isOpen: boolean;
+  title?: string;
   setIsOpen: (value: boolean) => void;
 }
 
-export const Modal = ({ children, isOpen = false, setIsOpen }: ModalType) => {
+export const Modal = ({
+  children,
+  isOpen = false,
+  title = 'Video',
+  setIsOpen,
+}: ModalType) => {
   const [isClosing, setIsClosing] = useState<boolean>(false);
 
   const handleAnimationEnd = () => {
@@ -31,7 +37,10 @@ export const Modal = ({ children, isOpen = false, setIsOpen }: ModalType) => {
       onAnimationEnd={handleAnimationEnd}
     >
       <S.Content onClick={(e) => e.stopPropagation()}>
-        <S.Close onClick={handleIsOpen} />
+        <S.Header>
+          <S.Title>{title}</S.Title>
+          <S.Close onClick={handleIsOpen} />
+        </S.Header>
         {children}
       </S.Content>
     </S.Container>
