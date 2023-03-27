@@ -51,14 +51,40 @@ export const Content = styled.div`
   background-color: #fff;
 `;
 
+export const Header = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: solid 1px #cdcdcd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+`;
+
+export const Title = styled.h2``;
+
 export const Close = styled.div`
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 20px;
-  height: 20px;
+  position: relative;
+  width: 30px;
+  height: 30px;
 
   cursor: pointer;
-  border-radius: 50%;
-  background-color: red;
+  transform: rotate(45deg);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    top: 45%;
+    left: 0;
+
+    background-color: #ff5151;
+  }
+
+  &::before {
+    transform: rotate(90deg);
+  }
 `;
