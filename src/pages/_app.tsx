@@ -1,7 +1,9 @@
 // Libs
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import AOS from "aos";
+
 import "aos/dist/aos.css";
 
 // Templates
@@ -20,6 +22,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ProductProvider>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <S.GlobalStyle />
       <Layout>
         <Component {...pageProps} />
