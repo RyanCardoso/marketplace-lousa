@@ -7,6 +7,7 @@ import { BoxSlider } from "@/components/organisms/Slider";
 // Banners
 import { LousasBanner } from "./LousasBanner";
 import { StepsBanner } from "./StepsBanner";
+import { SpacesBanner } from "./SpacesBanner";
 
 // Styles
 import * as S from "./styles";
@@ -18,6 +19,9 @@ export const BannerSlide = () => (
     </S.Slides>
     <S.Slides>
       <StepsBanner />
+    </S.Slides>
+    <S.Slides>
+      <SpacesBanner />
     </S.Slides>
   </BoxSlider>
 );
