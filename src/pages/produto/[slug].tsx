@@ -1,5 +1,5 @@
 // Libs
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { NextPage, NextPageContext } from "next";
 
 // Contexts
@@ -21,7 +21,9 @@ interface PageProductDTO {
 const Product: NextPage<PageProductDTO> = ({ data }) => {
   const { handleProduct } = useContext(ProductContext);
 
-  handleProduct?.(data);
+  useEffect(() => {
+    handleProduct?.(data);
+  });
 
   return <ScreenProduct />;
 };

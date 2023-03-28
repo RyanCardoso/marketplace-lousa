@@ -1,5 +1,5 @@
 // Libs
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { GetStaticProps, NextPage } from "next";
 
 // Services
@@ -20,9 +20,11 @@ const Home: NextPage<HomeDTO> = ({ data }) => {
   const { handleBoards, handleMirrors, handleTestimonies } =
     useContext(ProductContext);
 
-  handleBoards?.(board?.products);
-  handleMirrors?.(mirror?.products);
-  handleTestimonies?.(testimonies);
+  useEffect(() => {
+    handleBoards?.(board?.products);
+    handleMirrors?.(mirror?.products);
+    handleTestimonies?.(testimonies);
+  });
 
   return <ScreenHome />;
 };

@@ -26,6 +26,11 @@ export const CardProduct = ({
   onClick,
   onButtonClick,
 }: CardProductType) => {
+  const renderMessage = () => {
+    const validate = title.length > 27;
+    return validate ? `${title?.substring(0, 27)}...` : title;
+  };
+
   return (
     <S.Container id={id} data-aos="zoom-in">
       <S.Figure>
@@ -34,7 +39,7 @@ export const CardProduct = ({
         <Button label="Solicitar orçamento" onClick={onButtonClick} />
       </S.Figure>
 
-      <S.Title>{title}</S.Title>
+      <S.Title>{renderMessage()}</S.Title>
       <Link href={`/produto/${id}`}>mais detalhes</Link>
     </S.Container>
   );
