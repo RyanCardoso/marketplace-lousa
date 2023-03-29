@@ -39,7 +39,7 @@ export interface ProductDTO {
 }
 
 export const ListProducts = gql`
-    products(first: 20) {
+    products(first: 30) {
       id
       slug
       name

@@ -8,6 +8,8 @@ export const settings = {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
     nextArrow: <></>,
     prevArrow: <></>,
     appendDots: (dots: React.ReactNode) => (
@@ -42,6 +44,8 @@ export const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     variableWidth: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
     appendDots: (dots: React.ReactNode) => (
       <S.RoundDots>
         <ul>{dots}</ul>

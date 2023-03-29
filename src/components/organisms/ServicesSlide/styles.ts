@@ -19,19 +19,21 @@ export const Container = styled.section`
 `;
 
 export const Figure = styled.figure`
+  width: 33.3vw !important;
   max-width: 450px;
   height: 350px;
 
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
-
-  img {
+  img,
+  iframe {
     width: 100%;
     height: 100%;
 
-    object-fit: contain;
+    object-fit: cover;
+    border: none;
   }
 
   @media (max-width: 768px) {
+    width: 100% !important;
     max-width: none;
     height: 246px;
   }

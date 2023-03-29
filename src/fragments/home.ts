@@ -22,7 +22,7 @@ export const homeFragment = gql`
       board(where: { id: "cle9cj2834hy30blxrbg9vs2z" }) {
         ${ListProducts}
       }
-      mirror(where: {id: "cle8y6t383r4u0blxhibst3pg"}) {
+      mirror(where: {id: "cle8y6t383r4u0blxhibst3pg" }) {
         ${ListProducts}
       }
       ${TestimonyFragment}

@@ -23,6 +23,7 @@ export const Wrapper = styled.div`
   gap: 30px;
 
   @media (max-width: 768px) {
+    width: 85%;
     flex-direction: column;
     align-items: flex-start;
     gap: 13px;
