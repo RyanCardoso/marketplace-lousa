@@ -14,10 +14,10 @@ const menuItems = [
   { label: "Quem somos", href: "/quem-somos" },
 ];
 
-const Menu = () => (
+const Menu = ({ onClick }: { onClick?: () => void }) => (
   <S.Menu>
     {menuItems.map((menuItem) => (
-      <li key={menuItem.label}>
+      <li key={menuItem.label} onClick={onClick}>
         <Link href={menuItem.href}>{menuItem.label}</Link>
       </li>
     ))}
@@ -29,6 +29,10 @@ export const Header = () => {
 
   const handleIsOpen = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleCloseMenu = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -44,7 +48,7 @@ export const Header = () => {
 
       <S.Dropdown isOpen={isOpen}>
         <S.Content>
-          <Menu />
+          <Menu onClick={handleCloseMenu} />
           <Button label="Solicitar orçamento" isIcon />
         </S.Content>
       </S.Dropdown>
