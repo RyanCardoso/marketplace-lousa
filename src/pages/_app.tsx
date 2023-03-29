@@ -11,6 +11,7 @@ import { Layout } from "@/components/templates";
 
 // Contexts
 import ProductProvider from "@/context/Products";
+import ServicesProvider from "@/context/Services";
 
 // Styles
 import * as S from "@/styles/globals";
@@ -22,13 +23,18 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ProductProvider>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <S.GlobalStyle />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ServicesProvider>
+        <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+        </Head>
+        <S.GlobalStyle />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ServicesProvider>
     </ProductProvider>
   );
 }
