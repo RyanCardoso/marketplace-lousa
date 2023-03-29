@@ -81,7 +81,7 @@ export const Close = styled.div`
     top: 45%;
     left: 0;
 
-    background-color: #ff5151;
+    background-color: #0a3264;
   }
 
   &::before {
