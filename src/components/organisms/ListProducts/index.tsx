@@ -107,6 +107,28 @@ export const ListProducts = () => {
               }
             />
           )}
+
+          {tab === 0 && (
+            <S.Description>
+              <h2>Sobre a Lousa de vidro</h2>
+              <p>
+                Atraente e com a garantia de 10 anos, o Lousa em Vidro permite
+                uma gama completa de possibilidades estéticas e funcionais.
+                Usando nossa experiência em fabricação para atender a todas as
+                especificações técnicas, incluindo tipo, tamanho e estilo, a
+                CompanyBoard visa consistentemente fornecer a melhor qualidade,
+                valor e custo para nossos clientes em cada pedido de Lousa.
+              </p>
+              <p>
+                Com os recursos das nossas impressoras digitais, podemos
+                imprimir logotipos e padrões personalizados para incorporar
+                marcas, calendários, grades de produtos, logotipos de equipes e
+                muito mais em nossas lousas de vidro. As nossas Lousas de vidro
+                também podem ser centros de mesa de apresentação, duplicando
+                como telas de projeção quando necessário.
+              </p>
+            </S.Description>
+          )}
         </S.List>
       </S.Wrapper>
 
