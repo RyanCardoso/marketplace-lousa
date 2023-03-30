@@ -37,6 +37,24 @@ export const List = styled.div`
   }
 `;
 
+export const Description = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #004178;  
+  }
+
+  p {
+    color: #000000;
+    line-height: 24px;
+  }
+`
+
 export const Iframe = styled.iframe`
   width: 100%;
   height: 70vh;
