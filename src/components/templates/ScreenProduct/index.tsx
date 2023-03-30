@@ -39,12 +39,7 @@ export const ScreenProduct = () => {
         <meta name="description" content={handleMsgContent()} />
       </Head>
 
-      <Breadcrumb
-        options={[
-          { label: "Produtos", path: "" },
-          { label: String(product?.name), path: "" },
-        ]}
-      />
+      <Breadcrumb options={[{ label: String(product?.name), path: "" }]} />
       <S.BoxBtnMobile>
         <Button
           label="Solicitar orçamento pelo Whatsapp"
