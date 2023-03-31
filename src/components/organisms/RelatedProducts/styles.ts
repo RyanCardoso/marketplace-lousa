@@ -46,3 +46,10 @@ export const BoxProducts = styled.div`
     margin-top: 24px;
   }
 `;
+
+export const Iframe = styled.iframe`
+  width: 100%;
+  height: 70vh;
+
+  border: none;
+`;
