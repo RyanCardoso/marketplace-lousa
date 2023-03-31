@@ -83,6 +83,7 @@ export const ProductGql = (slug: string) => {
         relatedproducts {
           id
           name
+          slug
           productVideo {
             thumbnail {
               url
