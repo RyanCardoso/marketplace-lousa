@@ -50,7 +50,6 @@ export const DotsNumber = styled.div`
   }
 
   @media (max-width: 768px) {
-    color: #033573;
     bottom: 5px;
   }
 `;
