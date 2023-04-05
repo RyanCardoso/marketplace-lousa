@@ -4,6 +4,9 @@ import React from "react";
 // Atoms
 import { Button } from "@/components/atoms";
 
+// Utils
+import { handleRedirectWhatsapp } from "@/utils/send-product-whatsapp";
+
 // Styles
 import * as S from "./styles";
 
@@ -17,6 +20,7 @@ export const Ads = () => {
           height="52px"
           label="Solicitar orçamento pelo Whatsapp"
           backgroundColor="#25D366"
+          onClick={handleRedirectWhatsapp}
         />
       </S.Wrapper>
     </S.Container>

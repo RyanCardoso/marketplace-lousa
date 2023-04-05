@@ -5,6 +5,9 @@ import Link from "next/link";
 // Atoms
 import { Burger, Button, Logo } from "@/components/atoms";
 
+// Utils
+import { handleRedirectWhatsapp } from "@/utils/send-product-whatsapp";
+
 // Styles
 import * as S from "./styles";
 
@@ -42,14 +45,22 @@ export const Header = () => {
 
         <Logo />
 
-        <Button label="Solicitar orçamento" isIcon />
+        <Button
+          label="Solicitar orçamento"
+          isIcon
+          onClick={handleRedirectWhatsapp}
+        />
         <Burger onClick={handleIsOpen} isOpen={isOpen} />
       </S.Wrapper>
 
       <S.Dropdown isOpen={isOpen}>
         <S.Content>
           <Menu onClick={handleCloseMenu} />
-          <Button label="Solicitar orçamento" isIcon />
+          <Button
+            label="Solicitar orçamento"
+            isIcon
+            onClick={handleRedirectWhatsapp}
+          />
         </S.Content>
       </S.Dropdown>
     </S.Container>
