@@ -17,6 +17,10 @@ export const ScreenHome = () => {
           Nossa missão consiste em apreender para nossos clientes soluções rápidas e eficientes, satisfazer as expectativas fornecendo produtos e serviços de qualidade dentro do prazo estipulado.
           Com Visão de ser reconhecida com a melhor empresa no segmento, tanto para os nossos clientes como para nossos colaboradores e fornecedores. Proporcionando produtos e serviços de qualidade, com um atendimento respeitoso e honesto, ou seja, um experiência prazerosa para nós e nossos clientes e fornecedores."
         />
+        <meta
+          name="google-site-verification"
+          content="U9krRvd6hs1wULMp1DlWAhHTdMSAWa1dVCqWNX096_w"
+        />
       </Head>
 
       <Banner variant="slide" />
