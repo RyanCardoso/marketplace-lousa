@@ -1,38 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Site da Company Board
 
-## Getting Started
+Este é o repositório do site da Company Board, uma empresa que oferece uma variedade de produtos de alta qualidade. O site foi desenvolvido para fornecer informações detalhadas sobre os produtos, permitindo que os usuários visualizem os detalhes e, se estiverem interessados, sejam direcionados para a página específica do produto. Além disso, o site apresenta informações sobre os serviços oferecidos pela empresa, uma seção sobre a empresa em si e uma página de contato.
 
-First, run the development server:
+## Visão geral
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+O objetivo deste projeto é criar um site dinâmico e de fácil utilização, onde a empresa Company Board possa inserir e gerenciar seus produtos de maneira prática e rápida. Para isso, foram utilizadas as seguintes tecnologias:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **React JS**: <br> Um framework JavaScript amplamente utilizado para o desenvolvimento de interfaces de usuário. Foi escolhido devido à sua flexibilidade e facilidade de uso.
+- **Next.js**: <br> Uma estrutura que estende o React JS e permite a criação de aplicativos da web do lado do servidor. O Next.js fornece recursos poderosos, como renderização do lado do servidor e criação de rotas dinâmicas, que são especialmente úteis para este projeto.
+- **Styled Components**: <br> Uma biblioteca para estilização de componentes em JavaScript. Com o Styled Components, é possível criar estilos de forma modular e reaproveitável, facilitando a manutenção do código.
+- **Atomic Design**: <br> Uma metodologia de design que incentiva a criação de componentes independentes e reutilizáveis. O Atomic Design foi adotado neste projeto para melhorar a organização e escalabilidade do código.
+- **GraphQL**: <br> Uma linguagem de consulta para APIs que permite buscar e manipular dados de forma eficiente. Foi utilizado para otimizar a comunicação entre o front-end e o back-end do site.
+- **EmailJS**: <br> Uma plataforma que facilita o envio de e-mails a partir de aplicativos da web. O EmailJS foi integrado ao site para permitir que os usuários entrem em contato com a empresa de forma rápida e fácil.
+- **Hygraph**: <br> Uma plataforma de gerenciamento de produtos que foi utilizada para facilitar a inserção e o controle dos produtos da Company Board.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Acesso ao site
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+O site da Company Board pode ser acessado através do seguinte link: [https://lojacompanyboard.com.br/](https://lojacompanyboard.com.br/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Como executar o projeto localmente
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Caso deseje executar o projeto em sua própria máquina, siga as etapas abaixo:
 
-## Learn More
+1. Certifique-se de ter o Node.js instalado em sua máquina.
 
-To learn more about Next.js, take a look at the following resources:
+2. Faça o clone deste repositório em seu ambiente local.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Abra um terminal na pasta raiz do projeto e execute o seguinte comando para instalar as dependências necessárias:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```npm install```
 
-## Deploy on Vercel
+4. Após a conclusão da instalação, execute o comando abaixo para iniciar o servidor de desenvolvimento:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```npm run dev```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+5. Aguarde até que o servidor seja iniciado e, em seguida, abra um navegador da web e acesse `http://localhost:3000` para visualizar o site.
+
+## Contribuição
+
+Se você encontrar algum problema ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma nova issue neste repositório. Contribuições por meio de pull requests são sempre bem-vindas.
+
+Esperamos que você aprecie a experiência ao navegar no site da Company Board!
+
+
